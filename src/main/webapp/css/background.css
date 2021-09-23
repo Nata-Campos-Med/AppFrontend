@@ -1,0 +1,50 @@
+.background {
+    display: block !important;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    background-image: url("../images/ball.svg");
+
+}
+
+@media(min-width: 750px) {
+    .circle-1{
+        width: 100px;
+        height: 100px;
+        left: 60%;
+        top: -5%;
+    }
+}
+
+.circle-2{
+    width: 400px;
+    height: 400px;
+    right: 55%;
+    bottom: -1%;
+    transform: rotate(210deg)
+}
+.circle-3{
+    width: 100px;
+    height: 100px;
+    left: 10%;
+    top: 20%;
+}
+.circle-4{
+    width: 150px;
+    height: 150px;
+    right: 10%;
+    bottom: 10%;
+}
+.circle-5{
+    width: 300px;
+    height: 300px;
+    right: -150px;
+    top: 20%;
+}

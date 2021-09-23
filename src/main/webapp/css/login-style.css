@@ -1,0 +1,229 @@
+:root {
+    --red-error: rgb(231, 82, 82, 0.5);
+    --btn-green: #4cdd7c;
+    --btn-red: #e27e8f;
+    --background: #252526;
+    --text: #FFF;
+    --highlight: #ae50fb;
+    --background-container: rgba(227, 227, 227, .3);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    will-change: background-color;
+    transition: background-color 0.5s;
+    background-color: var(--background);
+    overflow: hidden;
+}
+
+header {
+    z-index: 3;
+    display: flex;
+    justify-self: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.container-icon {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    opacity: 0.7;
+    will-change: background-color;
+    transition: background-color 0.5s;
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/online-shopping.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.theme-switch {
+    --background: rgb(232, 194, 250);
+    --text: #252526;
+    color: var(--text);
+    width: 70px;
+    height: 30px;
+    background-color: var(--highlight);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    will-change: background-color;
+    transition: background-color 0.5s;
+}
+
+.switch {
+    background: rgb(232, 194, 250);
+    width: 24px;
+    height: 24px;
+    background-color: var(--background);
+    border-radius: 100%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 0.5s all ease;
+}
+
+.light-theme {
+    --background: rgb(232, 194, 250);
+    --text: #000;
+    --background-container: rgba(100, 100, 100, 0.3);
+    background-color: var(--background);
+    will-change: background-color;
+    transition: background-color 0.5s;
+}
+
+.light-theme .theme-switch {
+    background-color: var(--text);
+    will-change: background-color;
+    transition: background-color 0.5s;
+}
+
+.light-theme .switch {
+    transform: translateX(37px);
+}
+
+main {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    max-width: 450px;
+    margin: auto;
+    padding: 30px;
+    font-size: 1.5rem;
+    text-align: left;
+    will-change: background-color;
+    transition: background-color 0.5s;
+}
+
+.title-container {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.main-title {
+    color: var(--text);
+}
+
+.main-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.form-message-error {
+    display: none;
+    padding: 10px 20px;
+    background-color: var(--red-error);
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+}
+
+.input-container-login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-password-container-login {
+    margin-bottom: 10px;
+}
+
+
+.btn-view-password {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/eye.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    opacity: 0.7;
+}
+
+.btn-view-password:hover {
+    cursor: pointer;
+}
+
+
+button:hover {
+    cursor: pointer;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.btn-login {
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    color: white;
+    will-change: opacity;
+    transition: opacity 500ms;
+    font-family: 'Segoe UI', Verdana, sans-serif;
+}
+
+.btn-primary {
+    background-color: var(--btn-green);
+}
+
+.btn-secondary {
+    background-color: var(--btn-red);
+}
+
+
+@media(min-width:400px) {
+    header {
+        padding: 30px 60px 0 60px;
+    }
+    main {
+        padding: 60px;
+    }
+}

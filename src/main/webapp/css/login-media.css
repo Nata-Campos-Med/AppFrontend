@@ -1,0 +1,49 @@
+header {
+    max-width: 1250px;
+    padding-left: 60px;
+}
+
+.container-icon {
+    box-shadow: 0 8px 32px 0 rgba(52, 52, 56, 0.37);
+    background-color: var(--background-container);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+}
+
+.container-icon:hover {
+    opacity: 1;
+}
+
+main {
+    box-shadow: 0 8px 32px 0 rgba(52, 52, 56, 0.37);
+    background-color: var(--background-container);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+}
+
+.btn-login:hover{
+    opacity: 1;
+}
+
+.btn-container {
+    flex-direction: row;
+}
+
+.btn-primary {
+    opacity: 0.8;
+}
+
+.btn-secondary {
+    opacity: 0.8;
+}
+
+.btn-login:active {
+    opacity: 1;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.input-login {
+    background-color: rgb(255, 255, 255, 0.7);
+}

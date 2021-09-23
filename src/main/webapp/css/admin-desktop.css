@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    align-items: center;
+}
+
+main {
+    margin: 0 auto;
+    height: 700px;
+    width: 500px;
+}
+
+.navbar {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    width: 70px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+    background-color: var(--background-container);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.navbar > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar-btn {
+    width: auto;
+    height: auto;
+    position: unset;
+    justify-content: center;
+    transform:unset;
+    left: unset;
+    background-color: unset;
+}
+
+
+.settings {
+    height: 120px;
+    top: -60px;
+    right: -130px;
+    transform-origin: left;
+    transform: scaleX(0)
+}
+
+.settings::before {
+    transform: translateY(100px);
+    left: -15px;
+    border-bottom: 5px solid transparent;
+    border-right: 10px solid rgb(255, 255, 255);
+    border-top: 5px solid transparent;
+}
+
+.menu__container-settings:hover .settings,
+.menu__container-settings:active .settings,
+.settings:hover{
+    transform: scaleX(1)
+}
+
