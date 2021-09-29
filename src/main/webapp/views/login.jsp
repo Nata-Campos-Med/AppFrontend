@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/login-media.css" media="(min-width: 500px)">
 </head>
-<body>
+<body>	
     <div class="background" style="display: none;">
         <div class="circle circle-1" id="circle-1"></div>
         <div class="circle circle-2"></div>
@@ -37,7 +37,7 @@
         <div class="title-container">
             <h2 class="main-title">Iniciar sesión</h2>
         </div>
-        <form id="main-form" class="main-form" action="">
+        <form class="form-sign" method="get" action="./loginServlet" >
             <div id="form-message-error" class="form-message-error">
                 <p>
                     No pudimos encontrar una cuenta con los datos anteriores. Por favor revise que sean correctos o contactese con el administrador.
@@ -53,12 +53,13 @@
                 <button type="button" id="btn-view-password" class="btn-view-password" title="Ver u ocultar contraseña"></button>
             </label>
             <div class="btn-container">
-                <button id="btn-submit" class="btn-login btn-primary" title="Enviar datos" type="button">Aceptar</button>
+                
+                <input type="submit" name= "accion" value="Ingresar" class="btn btn-primary">
                 <button class="btn-login btn-secondary" title="Borrar datos" type="reset">Cancelar</button>
             </div>
         </form>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../js/login.js"></script>|
+    <script src="../js/login.js"></script>|   
 </body>
 </html>
