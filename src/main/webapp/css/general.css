@@ -1,0 +1,46 @@
+.input-general {
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: 1.5rem;
+}
+
+.input-container-general {
+    position: relative;
+}
+
+.input-span-general {
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    font-size: 1.2rem;
+}
+
+@media(min-width:500px){
+    .input-general {
+        padding-left: 20px;
+        padding-top: 15px;
+    }
+
+    .input-span-general {
+        will-change: transform, font-size;
+        transition: all .5s;
+        left: 20px;
+        top: 15px;
+        font-size: 1.5rem;
+    }
+
+    .input-general:focus ~ .input-span-general{
+        font-size: 1.2rem;
+        transform: translateY(-10px);
+    }
+
+    .input-general:valid ~ .input-span-general{
+        font-size: 1.2rem;
+        transform: translateY(-10px);
+    }
+}
