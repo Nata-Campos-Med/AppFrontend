@@ -39,16 +39,7 @@ public class Controlador extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (accion.equals("Mostrar Todo")) {
-				try {
-					ArrayList<Usuarios> lista = TestJSON.getJSON();
-					request.setAttribute("lista", lista);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-
-			else if (accion.equals("Agregar")) {
+			}else if (accion.equals("Agregar")) {
 				Usuarios usuario = new Usuarios();
 				usuario.setCedulaUsuario(Long.parseLong(request.getParameter("txtcedula")));
 				usuario.setNombreUsuario(request.getParameter("txtnombre"));
@@ -140,6 +131,15 @@ public class Controlador extends HttpServlet {
 					e.printStackTrace();
 				}
 			}
+			else if (accion.equals("Mostrar Todo")) {
+				try {
+					ArrayList<Usuarios> lista = TestJSON.getJSON();
+					request.setAttribute("lista", lista);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+
 			request.getRequestDispatcher("/Usuarios.jsp").forward(request, response);
 			break;
 
@@ -228,6 +228,31 @@ public class Controlador extends HttpServlet {
 					e.printStackTrace();
 				}
 			}
+			else if (accion.equals("Consultar")) {
+				Long id = Long.parseLong(request.getParameter("txtcedula"));
+				try {
+					ArrayList<Clientes> lista1 = TestJSON.getJSONCl(id);
+					System.out.println("Parametro: " + id);
+					for (Clientes cliente : lista1) {
+						if (cliente.getCedulaCliente() == id) {
+							request.setAttribute("clienteSeleccionado", cliente);
+							request.setAttribute("lista", lista1);
+
+						}
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			else if (accion.equals("Mostrar Todo")) {
+				try {
+					ArrayList<Clientes> lista = TestJSON.getJSONCl();
+					request.setAttribute("lista", lista);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+
 			request.getRequestDispatcher("/Clientes.jsp").forward(request, response);
 			break;
 		case "Proveedores":
