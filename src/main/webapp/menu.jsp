@@ -14,6 +14,7 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-info">
 		<div class="container-fluid">
+		
 
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
@@ -43,11 +44,15 @@
 					</li>
 					<li class="nav-item"><a
 						style="margin-left: 10px; border: none"
-						class="btn btn-outline-light" href="Controlador?menu=Ventas"
-						target="myFrame">Ventas</a></li>
+						class="btn btn-outline-light" 
+						href="Controlador?menu=Ventas&accion=Listar" target="myFrame">Ventas</a>
+					</li>
+									
 				</ul>
+				
 			</div>
 		</div>
+		
 		<div class="dropdown">
 			<button class="btn btn-outline-light dropdown-toggle" type="button"
 				id="dropdownMenuButton1" data-bs-toggle="dropdown"
@@ -67,6 +72,7 @@
 	<div class="m-4" style="height: 550px;">
 		<iframe style="height: 100%; width: 100%; border: none" name="myFrame"></iframe>
 	</div>
+	
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -63,6 +63,34 @@ public class TestJSON {
 		return lista;
 	}
 
+	public static ArrayList<Usuarios> getJSON(Long id) throws IOException, ParseException { // devolver un listado JSON
+
+		url = new URL(sitio + "usuarios/listar"); // trae el metodo de Usuarios.API
+		HttpURLConnection http = (HttpURLConnection) url.openConnection();
+
+		http.setRequestMethod("GET");
+		http.setRequestProperty("Accept", "application/json");
+
+		InputStream respuesta = http.getInputStream();
+		byte[] inp = respuesta.readAllBytes();
+		String json = "";
+
+		for (int i = 0; i < inp.length; i++) {
+			json += (char) inp[i];
+		}
+		ArrayList<Usuarios> listaTemporal = new ArrayList<Usuarios>();
+		ArrayList<Usuarios> lista = new ArrayList<Usuarios>();
+		listaTemporal = parsingUsuarios(json);
+
+		for (Usuarios usuario : listaTemporal) {
+			if (usuario.getCedulaUsuario() == id) {
+				lista.add(usuario);
+			}
+		}
+		http.disconnect();
+		return lista;
+	}
+
 	public static int postJSON(Usuarios usuario) throws IOException {
 
 		url = new URL(sitio + "usuarios/guardar");

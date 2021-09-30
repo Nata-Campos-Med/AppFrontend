@@ -51,6 +51,10 @@
 						<input type="submit" class="btn btn-primary" name="accion"
 							value="Agregar"> <input type="submit"
 							class="btn btn-success" name="accion" value="Actualizar">
+							<input type="submit"
+							class="btn btn-info" name="accion" value="Consultar">
+							<input type="submit"
+							class="btn btn-info" name="accion" value="Mostrar Todo">
 					</form>
 				</div>
 			</div>
@@ -67,7 +71,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<%
+					<%					
 					ArrayList<Usuarios> lista = (ArrayList<Usuarios>) request.getAttribute("lista");
 					for (Usuarios usuario : lista) {
 					%>
