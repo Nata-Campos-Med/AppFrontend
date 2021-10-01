@@ -24,7 +24,7 @@ public class loginServlet extends HttpServlet {
 	public void validarUsuarios(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			ArrayList<Usuarios> lista = TestJSON.getJSON();
+			ArrayList<Usuarios> lista = TestJSON.getJSONUsuarios();
 			request.setAttribute("lista", lista);
 			String usua = request.getParameter("txtusuario");
 			String pass = request.getParameter("txtpassword");
