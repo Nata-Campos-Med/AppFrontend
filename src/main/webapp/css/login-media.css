@@ -4,7 +4,6 @@ header {
 }
 
 .container-icon {
-    box-shadow: 0 8px 32px 0 rgba(52, 52, 56, 0.37);
     background-color: var(--background-container);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -16,7 +15,6 @@ header {
 }
 
 main {
-    box-shadow: 0 8px 32px 0 rgba(52, 52, 56, 0.37);
     background-color: var(--background-container);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);

@@ -146,12 +146,52 @@ main {
 
 .form-message-error {
     display: none;
+    width: 100%;
+    height: auto;
+    max-height: 100px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
     padding: 10px 20px;
     background-color: var(--red-error);
     color: white;
     font-weight: 500;
     border-radius: 10px;
 }
+
+.form-message-error p {
+    width: calc(100% - (1.5rem + 10px));
+    height: 100%;
+    text-overflow: ellipsis;
+    padding: 1px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.form-message-error p::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+}
+.form-message-error p::-webkit-scrollbar-thumb {
+    width: 8px;
+    background-color: #b47575;
+    border-radius: 10px;
+}
+
+.form-message-error i {
+    font-size: 1.5rem;
+    text-align: center;
+    align-self: center;
+}
+
+.form-message-error i:hover,
+.form-message-error i:active {
+    color: #e7c7c7;
+    cursor: pointer;
+}
+
+
 
 .input-container-login {
     width: 100%;
@@ -217,7 +257,6 @@ button:hover {
 .btn-secondary {
     background-color: var(--btn-red);
 }
-
 
 @media(min-width:400px) {
     header {

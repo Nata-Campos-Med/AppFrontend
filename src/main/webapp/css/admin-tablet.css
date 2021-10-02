@@ -1,8 +1,14 @@
 
 main {
-    background-color: var(--background-container);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.settings,
+.profile {
+    width: 120px;
 }
 
 .navbar {
