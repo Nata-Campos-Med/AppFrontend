@@ -40,10 +40,8 @@
         </div>
         <form id="main-form" class="main-form" method="get" action="./loginServlet">
             <div id="form-message-error" class="form-message-error">
-                <p>
-                    No pudimos encontrar una cuenta con los datos anteriores. Por favor revise que sean correctos o contactese con el administrador.
-                </p>
-                <i id="close-message" class="fas fa-times close-message"></i>
+            		<p></p>
+                	<i id="close-message" class="fas fa-times close-message"></i>
             </div>
             <label class="input-container-login input-container-general input-user-container-login">
                 <input class="input-login input-user input-general" id="input-user" type="text" autocomplete="nickname" name="txtusuario" title="Ingrese su usuario" required>
@@ -59,6 +57,7 @@
                 <button class="btn-login btn-secondary" title="Borrar datos" type="reset">Cancelar</button>
             </div>
         </form>
+
     </main>
     <script src="./js/login.js"></script>|
 </body>

@@ -23,7 +23,9 @@ public class loginServlet extends HttpServlet {
 
 	public void validarUsuarios(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+	    
 		try {
+			
 			ArrayList<Usuarios> lista = TestJSON.getJSONUsuarios();
 			request.setAttribute("lista", lista);
 			String usua = request.getParameter("txtusuario");
@@ -39,8 +41,14 @@ public class loginServlet extends HttpServlet {
 			}
 
 			if (respuesta == 0) {
-				request.getRequestDispatcher("/login.jsp").forward(request, response);
-				System.out.println("No se encontraron datos");
+				//String mensaje = "Error";
+				
+				PrintWriter out;
+				response.setContentType("text/html");
+				out = response.getWriter();
+				out.println("<script>alert(\"Funciono!\"); window.location=\"./login.jsp\"</script>");
+				//request.getRequestDispatcher("/login.jsp").forward(request, response);
+				//request.setAttribute("mensaje", mensaje);
 			}
 
 		} catch (Exception e) {
@@ -52,7 +60,7 @@ public class loginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		
 		String accion = request.getParameter("accion");
 
 		if (accion.equals("Ingresar")) {
