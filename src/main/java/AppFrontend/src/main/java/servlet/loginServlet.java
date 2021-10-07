@@ -46,9 +46,11 @@ public class loginServlet extends HttpServlet {
 				PrintWriter out;
 				response.setContentType("text/html");
 				out = response.getWriter();
-				out.println("<script>alert(\"Funciono!\"); window.location=\"./login.jsp\"</script>");
-				//request.getRequestDispatcher("/login.jsp").forward(request, response);
-				//request.setAttribute("mensaje", mensaje);
+				out.println("<html><head><title>Error</title><style>.swal-overlay{background-color: red;}</style></head>");
+				out.println("<body>");
+				out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+				out.println("<script>swal(\"Oops\", \"Ha habido un error!\", \"error\", {closeOnClickOutside: false}); const btnSwal = document.getElementsByClassName(\"swal-button\"); btnSwal[0].addEventListener(\"click\", () => {window.location=\"./login.jsp\"}) </script>");
+				out.println("</body></html>");
 			}
 
 		} catch (Exception e) {
