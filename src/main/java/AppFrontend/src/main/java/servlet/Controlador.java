@@ -39,7 +39,7 @@ public class Controlador extends HttpServlet {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			} else if (accion.equals("Agregar")) {
+			}if (accion.equals("Agregar")) {
 				Usuarios usuario = new Usuarios();
 				usuario.setCedulaUsuario(Long.parseLong(request.getParameter("txtcedula")));
 				usuario.setNombreUsuario(request.getParameter("txtnombre"));
@@ -104,7 +104,7 @@ public class Controlador extends HttpServlet {
 					e.printStackTrace();
 				}
 			} else if (accion.equals("Eliminar")) {
-				Long id = Long.parseLong(request.getParameter("id"));
+				Long id = Long.parseLong(request.getParameter("txtcedula"));
 				int respuesta = 0;
 				try {
 					respuesta = TestJSON.deleteJSONUsuarios(id);
