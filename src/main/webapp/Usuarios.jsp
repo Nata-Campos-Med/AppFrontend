@@ -54,43 +54,9 @@
 							<input type="submit"
 							class="btn btn-info" name="accion" value="Consultar">
 							<input type="submit"
-							class="btn btn-info" name="accion" value="Mostrar Todo">
+							class="btn btn-danger" name="accion" value="Eliminar">
 					</form>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-8">
-			<table class="table">
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">Cedula</th>
-						<th scope="col">Nombre</th>
-						<th scope="col">Email</th>
-						<th scope="col">Usuario</th>
-						<th scope="col">Password</th>
-					</tr>
-				</thead>
-				<tbody>
-					<%					
-					ArrayList<Usuarios> lista = (ArrayList<Usuarios>) request.getAttribute("lista");
-					for (Usuarios usuario : lista) {
-					%>
-					<tr>
-						<td><%=usuario.getCedulaUsuario()%></td>
-						<td><%=usuario.getNombreUsuario()%></td>
-						<td><%=usuario.getEmailUsuario()%></td>
-						<td><%=usuario.getUsuario()%></td>
-						<td><%=usuario.getPassword()%></td>
-						<td><a class="btn btn-warning"
-							href="Controlador?menu=Usuarios&accion=Cargar&id=<%=usuario.getCedulaUsuario()%>">Editar</a>
-							<a class="btn btn-danger"
-							href="Controlador?menu=Usuarios&accion=Eliminar&id=<%=usuario.getCedulaUsuario()%>">Eliminar</a>
-						</td>
-					</tr>
-					<%
-					}
-					%>
-				</tbody>
+				
 			</table>
 		</div>
 		<!-- Optional JavaScript -->
