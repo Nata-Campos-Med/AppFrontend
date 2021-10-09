@@ -1,105 +1,139 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="AppFrontend.src.main.java.servlet.Proveedores"%>
 <%@page import="java.util.ArrayList"%>
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-	crossorigin="anonymous">
-<meta charset="ISO-8859-1">
-<title>Creacion de Proveedores</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aplicación principal de administrador.">
+    <title>App tienda WWW</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://use.fontawesome.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="shortcut icon" href="./images/shop-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/background.css" media="(min-width: 500px)">
+    <link rel="stylesheet" href="./css/admin-style.css" >
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/admin-tablet.css" media="(min-width: 500px)">
+    <link rel="stylesheet" href="./css/admin-desktop.css" media="(min-width: 750px)">
 </head>
 <body>
-	<div class="row">
-		<div class="card col-md-4">
-			<div class="card-body">
-				<h5 class="card-title">Proveedores</h5>
-				<h6 class="card-subtitle mb-2 text-muted">En este panel podras
-					gestionar los datos de los Proveedores del sistema</h6>
-				<div>
-					<form class="form-sign" method="get" action="Controlador">
+    <div class="background" style="display: none;">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        <div class="circle circle-4"></div>
+        <div class="circle circle-5"></div>
+    </div>
 
-						<div class="form-group">
-							<input type="hidden" name="menu" value="Proveedores"> <label>Nit:</label>
-							<input type="text" name="txtnit" class="form-control"
-								value="${proveedorSeleccionado.getNitProveedor()}">
-						</div>
-						<div class="form-group">
-							<label>Nombre:</label> <input type="text" name="txtnombre"
-								class="form-control"
-								value="${proveedorSeleccionado.getNombreProveedor()}">
-						</div>
-						<div class="form-group">
-							<label>Ciudad:</label> <input type="text" name="txtciudad"
-								class="form-control"
-								value="${proveedorSeleccionado.getCiudadProveedor()}">
-						</div>
-						<div class="form-group">
-							<label>Direccion:</label> <input type="text" name="txtdireccion"
-								class="form-control" value="${proveedorSeleccionado.getDireccionProveedor()}">
-						</div>
-						<div class="form-group">
-							<label>Telefono:</label> <input type="text"	name="txttelefono" 
-							class="form-control" value="${proveedorSeleccionado.getTelefonoProveedor()}">
-						</div>
-						<input type="submit" class="btn btn-primary" name="accion"
-							value="Agregar"> <input type="submit"
-							class="btn btn-success" name="accion" value="Actualizar">
-							<input type="submit"
-							class="btn btn-info" name="accion" value="Consultar">
-							<input type="submit"
-							class="btn btn-info" name="accion" value="Mostrar Todo">
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-8">
-			<table class="table">
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">Nit</th>
-						<th scope="col">Nombre</th>
-						<th scope="col">Ciudad</th>
-						<th scope="col">Direccion</th>
-						<th scope="col">Telefono</th>
-					</tr>
-				</thead>
-				<tbody>
-					<%
-					ArrayList<Proveedores> lista = (ArrayList<Proveedores>) request.getAttribute("lista");
-					for (Proveedores proveedor : lista) {
-					%>
-					<tr>
-						<td><%=proveedor.getNitProveedor()%></td>
-						<td><%=proveedor.getNombreProveedor()%></td>
-						<td><%=proveedor.getCiudadProveedor()%></td>
-						<td><%=proveedor.getDireccionProveedor()%></td>
-						<td><%=proveedor.getTelefonoProveedor()%></td>
-						<td><a class="btn btn-warning"
-							href="Controlador?menu=Proveedores&accion=Cargar&id=<%=proveedor.getNitProveedor()%>">Editar</a>
-							<a class="btn btn-danger"
-							href="Controlador?menu=Proveedores&accion=Eliminar&id=<%=proveedor.getNitProveedor()%>">Eliminar</a>
-						</td>
-					</tr>
-					<%
-					}
-					%>
-				</tbody>
-			</table>
-		</div>
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-			crossorigin="anonymous"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-			integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-			crossorigin="anonymous"></script>
+    <nav class="navbar">
+        <div>
+            <a class="btn-admin" id="btn-home" href="Controlador?menu=menu">
+                <span class="btn-span">Inicio</span>
+                <div class="logo">
+                </div>
+            </a>
+        </div>
+        <div class="navbar-btn">
+            <a class="btn-admin" id="btn-users" href="Controlador?menu=Usuarios&accion=Listar">
+                <span class="btn-span">Usuarios</span>
+                <img src="./images/user.svg" alt="user">
+            </a>
+            <a class="btn-admin" id="btn-customers" href="Controlador?menu=Clientes&accion=Listar">
+                <span class="btn-span">Clientes</span>
+                <img src="./images/customer.svg" alt="customer">
+            </a>
+            <a class="btn-admin white" id="btn-suppliers" href="Controlador?menu=Proveedores&accion=Listar">
+                <span class="btn-span">Proveedores</span>
+                <img src="./images/supplier.svg" alt="supplier">
+            </a>
+            <a class="btn-admin" id="btn-products" href="Controlador?menu=Productos&accion=Listar">
+                <span class="btn-span">Productos</span>
+                <img src="./images/product.svg" alt="product">
+            </a>
+            <a class="btn-admin" id="btn-sales" href="Controlador?menu=Ventas&accion=Listar">
+                <span class="btn-span">Ventas</span>
+                <img src="./images/sale.svg" alt="sales">
+            </a>
+            <a class="btn-admin" id="btn-reports" href="./reports.jsp">
+                <span class="btn-span">Reportes</span>
+                <img src="./images/report.svg" alt="reports">
+            </a>
+        </div>
+        <div>
+            <div class="menu__container-profile container-icon">
+                <i class="fas fa-user-circle"></i>
+                <div class="profile">
+                    <h3>${usuario.getNombreUsuario()}</h3>
+                    <div class="sign-out">
+                        <a href="./login.jsp">Cerrar sesión</a>
+                        <i class="fas fa-sign-out-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__container-settings container-icon">
+                <i class="fas fa-cog settings-icon"></i>
+                <div class="settings">
+                    <h3>Configuración</h3>
+                    <div class="container-theme">
+                        <span>Tema</span>
+                        <div class="theme-switch" id="theme-switch" title="switch theme">
+                            <div class="switch"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- <section id="message-section" class="message-section">
+            <div class="message neutral-message">
+                <p>
+                    Selecciona una de las opciones del menu para empezar
+                </p>
+                <i class="fas fa-times close-message"></i>
+            </div>
+        </section> -->
+        <form id="form-people" class="form-people" action="Controlador" method="get">
+            <input type="hidden" name="menu" value="Proveedores">
+            <h2 id="title-section" class="title-section">Proveedores</h2>
+            <div class="input-group-section" id="input-group-section">
+                <label class="input-container-admin input-container-general">
+                    <input class="input-general" id="input-data-1" type="text" title="NIT" name="txtnit" value="${proveedorSeleccionado.getNitProveedor()}">
+                    <span class="input-span-general" id="span-data-1">NIT</span>
+                </label>
+                <label class="input-container-admin input-container-general">
+                    <input class="input-general" id="input-data-4" type="text" title="Nombre Proveedor" name="txtnombre" value="${proveedorSeleccionado.getNombreProveedor()}">
+                    <span class="input-span-general" id="span-data-4">Nombre Proveedor</span>
+                </label>
+                <label class="input-container-admin input-container-general">
+                    <input class="input-general" id="input-data-2" type="text" title="Dirección" name="txtdireccion" value="${proveedorSeleccionado.getDireccionProveedor()}">
+                    <span class="input-span-general" id="span-data-2">Dirección</span>
+                </label>
+                <label class="input-container-admin input-container-general">
+                    <input class="input-general" id="input-data-3" type="text" title="Teléfono" name="txttelefono" value="${proveedorSeleccionado.getTelefonoProveedor()}">
+                    <span class="input-span-general" id="span-data-3">Teléfono</span>
+                </label>
+                <label class="input-container-admin input-container-general">
+                    <input class="input-general" id="input-data-5" type="text" title="Ciudad" name="txtciudad" value="${proveedorSeleccionado.getCiudadProveedor()}">
+                    <span class="input-span-general" id="span-data-5">Ciudad</span>
+                </label>
+            </div>
+            <div id="crud-section" class="crud-section">
+                <button class="btn-admin-crud" type="submit" title="Agregar" name="accion" value="Agregar"><img src="./images/plus.svg" alt=""></button>
+                <button class="btn-admin-crud" type="submit" title="Actualizar" name="accion" value="Actualizar"><img src="./images/update.svg" alt=""></button>
+                <button class="btn-admin-crud" type="submit" title="Consular" name="accion" value="Consultar"><img src="./images/search.svg" alt=""></button>
+                <button class="btn-admin-crud" type="submit" title="Eliminar" name="accion" value="Eliminar"><img src="./images/delete.svg" alt=""></button>
+            </div>
+        </form>
+    </main>
+    <script src="./js/app.js"></script>
 </body>
 </html>

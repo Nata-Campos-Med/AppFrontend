@@ -69,7 +69,7 @@
                 <div class="profile">
                     <h3>${usuario.getNombreUsuario()}</h3>
                     <div class="sign-out">
-                        <span>Cerrar sesión</span>
+                        <a href="./login.jsp">Cerrar sesión</a>
                         <i class="fas fa-sign-out-alt"></i>
                     </div>
                 </div>

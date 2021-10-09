@@ -34,14 +34,14 @@
 
     <nav class="navbar">
         <div>
-            <a class="btn-admin white" id="btn-home" href="Controlador?menu=menu">
+            <a class="btn-admin" id="btn-home" href="Controlador?menu=menu">
                 <span class="btn-span">Inicio</span>
                 <div class="logo">
                 </div>
             </a>
         </div>
         <div class="navbar-btn">
-            <a class="btn-admin" id="btn-users" href="Controlador?menu=Usuarios&accion=Listar">
+            <a class="btn-admin white" id="btn-users" href="Controlador?menu=Usuarios&accion=Listar">
                 <span class="btn-span">Usuarios</span>
                 <img src="./images/user.svg" alt="user">
             </a>
@@ -72,7 +72,7 @@
                 <div class="profile">
                     <h3>${usuario.getNombreUsuario()}</h3>
                     <div class="sign-out">
-                        <span>Cerrar sesión</span>
+                        <a href="./login.jsp">Cerrar sesión</a>
                         <i class="fas fa-sign-out-alt"></i>
                     </div>
                 </div>

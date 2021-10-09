@@ -215,7 +215,7 @@ public class Controlador extends HttpServlet {
 					e.printStackTrace();
 				}
 			} else if (accion.equals("Eliminar")) {
-				Long id = Long.parseLong(request.getParameter("id"));
+				Long id = Long.parseLong(request.getParameter("txtcedula"));
 				int respuesta = 0;
 				try {
 					respuesta = TestJSON.deleteJSONClientes(id);
@@ -325,7 +325,7 @@ public class Controlador extends HttpServlet {
 					e.printStackTrace();
 				}
 			} else if (accion.equals("Eliminar")) {
-				Long id = Long.parseLong(request.getParameter("id"));
+				Long id = Long.parseLong(request.getParameter("txtnit"));
 				int respuesta = 0;
 				try {
 					respuesta = TestJSON.deleteJSONProveedores(id);
