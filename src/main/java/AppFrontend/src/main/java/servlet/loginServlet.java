@@ -46,10 +46,21 @@ public class loginServlet extends HttpServlet {
 				PrintWriter out;
 				response.setContentType("text/html");
 				out = response.getWriter();
-				out.println("<html><head><title>Error</title><style>.swal-overlay{background-color: red;}</style></head>");
+				out.println("<html><head><title>Error</title><style>"
+						+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+						+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+						+ "	.swal-title{color: #FFF; font-weight: 500;}"
+						+ " .swal-text{color: #FFF; font-weight: 300;}"
+						+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+						+ "	.swal-button:hover{opacity: 1}"
+						+ "</style></head>");
 				out.println("<body>");
 				out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
-				out.println("<script>swal(\"Oops\", \"Ha habido un error!\", \"error\", {closeOnClickOutside: false}); const btnSwal = document.getElementsByClassName(\"swal-button\"); btnSwal[0].addEventListener(\"click\", () => {window.location=\"./login.jsp\"}) </script>");
+				out.println("<script>"
+						+ "	swal(\"Usuario no encontrado\", \"Verifique sus datos o contáctese con el administrador.\", \"error\", {closeOnClickOutside: false});"
+						+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+						+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./login.jsp\"})"
+						+ "</script>");
 				out.println("</body></html>");
 			}
 

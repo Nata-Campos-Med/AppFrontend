@@ -4,7 +4,7 @@ header {
 }
 
 .container-icon {
-    background-color: var(--background-container);
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 10px;
@@ -15,7 +15,7 @@ header {
 }
 
 main {
-    background-color: var(--background-container);
+    background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 10px;

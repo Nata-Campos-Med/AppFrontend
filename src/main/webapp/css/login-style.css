@@ -89,8 +89,6 @@ header {
 
 .light-theme {
     --background: rgb(232, 194, 250);
-    --text: #000;
-    --background-container: rgba(100, 100, 100, 0.3);
     background-color: var(--background);
     will-change: background-color;
     transition: background-color 0.5s;
