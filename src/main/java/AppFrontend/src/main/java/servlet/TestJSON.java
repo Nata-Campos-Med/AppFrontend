@@ -89,8 +89,10 @@ public class TestJSON {
 		for (Usuarios usuario : listaTemporal) {
 			if (usuario.getCedulaUsuario() == id) {
 				lista.add(usuario);
+				break;
 			}
 		}
+		
 		http.disconnect();
 		return lista;
 	}
