@@ -1,4 +1,4 @@
-package AppFrontend.src.main.java.servlet;
+package AppFrontend.src.main.java.servlet.modelo;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,6 +14,11 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import AppFrontend.src.main.java.servlet.modelo.DTO.Clientes;
+import AppFrontend.src.main.java.servlet.modelo.DTO.Productos;
+import AppFrontend.src.main.java.servlet.modelo.DTO.Proveedores;
+import AppFrontend.src.main.java.servlet.modelo.DTO.Usuarios;
 
 public class TestJSON {
 	private static URL url;

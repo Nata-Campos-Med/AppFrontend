@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="AppFrontend.src.main.java.servlet.Clientes"%>
+<%@page import="AppFrontend.src.main.java.servlet.modelo.DTO.Clientes"%>
 <%@page import="java.util.ArrayList"%>
 
 <!DOCTYPE html>

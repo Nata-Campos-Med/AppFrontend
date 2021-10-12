@@ -1,4 +1,4 @@
-package AppFrontend.src.main.java.servlet;
+package AppFrontend.src.main.java.servlet.controlador;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,6 +11,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import AppFrontend.src.main.java.servlet.modelo.TestJSON;
+import AppFrontend.src.main.java.servlet.modelo.TestJSONClientes;
+import AppFrontend.src.main.java.servlet.modelo.TestJSONProductos;
+import AppFrontend.src.main.java.servlet.modelo.TestJSONProveedores;
+import AppFrontend.src.main.java.servlet.modelo.DTO.Clientes;
+import AppFrontend.src.main.java.servlet.modelo.DTO.Productos;
+import AppFrontend.src.main.java.servlet.modelo.DTO.Proveedores;
+import AppFrontend.src.main.java.servlet.modelo.DTO.Usuarios;
 
 @WebServlet("/Controlador")
 public class Controlador extends HttpServlet {
@@ -184,7 +193,7 @@ public class Controlador extends HttpServlet {
 		case "Clientes":
 			if (accion.equals("Listar")) {
 				try {
-					ArrayList<Clientes> lista = TestJSON.getJSONClientes();
+					ArrayList<Clientes> lista = TestJSONClientes.getJSONClientes();
 					request.setAttribute("lista", lista);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -202,7 +211,7 @@ public class Controlador extends HttpServlet {
 
 					int respuesta = 0;
 					try {
-						respuesta = TestJSON.postJSON(cliente);
+						respuesta = TestJSONClientes.postJSON(cliente);
 						PrintWriter write = response.getWriter();
 						if (respuesta == 200) {
 							request.getRequestDispatcher("Controlador?menu=Clientes&accion=Listar").forward(request,
@@ -232,7 +241,7 @@ public class Controlador extends HttpServlet {
 
 						int respuesta = 0;
 						try {
-							respuesta = TestJSON.putJSON(cliente, cliente.getCedulaCliente());
+							respuesta = TestJSONClientes.putJSON(cliente, cliente.getCedulaCliente());
 							PrintWriter write = response.getWriter();
 
 							if (respuesta == 200) {
@@ -258,7 +267,7 @@ public class Controlador extends HttpServlet {
 
 				Long id = Long.parseLong(request.getParameter("id"));
 				try {
-					ArrayList<Clientes> lista1 = TestJSON.getJSONClientes();
+					ArrayList<Clientes> lista1 = TestJSONClientes.getJSONClientes();
 					System.out.println("Parametro: " + id);
 					for (Clientes clientes : lista1) {
 						if (clientes.getCedulaCliente() == id) {
@@ -275,7 +284,7 @@ public class Controlador extends HttpServlet {
 					Long id = Long.parseLong(request.getParameter("txtcedula"));
 					int respuesta = 0;
 					try {
-						respuesta = TestJSON.deleteJSONClientes(id);
+						respuesta = TestJSONClientes.deleteJSONClientes(id);
 						PrintWriter write = response.getWriter();
 						if (respuesta == 200) {
 							request.getRequestDispatcher("Controlador?menu=Clientes&accion=Listar").forward(request,
@@ -295,7 +304,7 @@ public class Controlador extends HttpServlet {
 				if (request.getParameter("txtcedula") != "") {
 					Long id = Long.parseLong(request.getParameter("txtcedula"));
 					try {
-						ArrayList<Clientes> lista1 = TestJSON.getJSONClientes(id);
+						ArrayList<Clientes> lista1 = TestJSONClientes.getJSONClientes(id);
 						if (!lista1.isEmpty()) {
 
 							for (Clientes cliente : lista1) {
@@ -316,7 +325,7 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Mostrar Todo")) {
 				try {
-					ArrayList<Clientes> lista = TestJSON.getJSONClientes();
+					ArrayList<Clientes> lista = TestJSONClientes.getJSONClientes();
 					request.setAttribute("lista", lista);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -328,7 +337,7 @@ public class Controlador extends HttpServlet {
 		case "Proveedores":
 			if (accion.equals("Listar")) {
 				try {
-					ArrayList<Proveedores> lista = TestJSON.getJSONProveedores();
+					ArrayList<Proveedores> lista = TestJSONProveedores.getJSONProveedores();
 					request.setAttribute("lista", lista);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -346,7 +355,7 @@ public class Controlador extends HttpServlet {
 
 					int respuesta = 0;
 					try {
-						respuesta = TestJSON.postJSON(proveedor);
+						respuesta = TestJSONProveedores.postJSON(proveedor);
 						PrintWriter write = response.getWriter();
 						if (respuesta == 200) {
 							request.getRequestDispatcher("Controlador?menu=Proveedores&accion=Listar").forward(request,
@@ -377,7 +386,7 @@ public class Controlador extends HttpServlet {
 
 						int respuesta = 0;
 						try {
-							respuesta = TestJSON.putJSON(proveedor, proveedor.getNitProveedor());
+							respuesta = TestJSONProveedores.putJSON(proveedor, proveedor.getNitProveedor());
 							PrintWriter write = response.getWriter();
 
 							if (respuesta == 200) {
@@ -402,7 +411,7 @@ public class Controlador extends HttpServlet {
 
 				Long id = Long.parseLong(request.getParameter("id"));
 				try {
-					ArrayList<Proveedores> lista1 = TestJSON.getJSONProveedores();
+					ArrayList<Proveedores> lista1 = TestJSONProveedores.getJSONProveedores();
 					System.out.println("Parametro: " + id);
 					for (Proveedores proveedor : lista1) {
 						if (proveedor.getNitProveedor() == id) {
@@ -419,7 +428,7 @@ public class Controlador extends HttpServlet {
 					Long id = Long.parseLong(request.getParameter("txtnit"));
 					int respuesta = 0;
 					try {
-						respuesta = TestJSON.deleteJSONProveedores(id);
+						respuesta = TestJSONProveedores.deleteJSONProveedores(id);
 						PrintWriter write = response.getWriter();
 						if (respuesta == 200) {
 							request.getRequestDispatcher("Controlador?menu=Proveedores&accion=Listar").forward(request,
@@ -440,7 +449,7 @@ public class Controlador extends HttpServlet {
 				if (request.getParameter("txtnit") != "") {
 					Long id = Long.parseLong(request.getParameter("txtnit"));
 					try {
-						ArrayList<Proveedores> lista1 = TestJSON.getJSONProveedores(id);
+						ArrayList<Proveedores> lista1 = TestJSONProveedores.getJSONProveedores(id);
 						if (!lista1.isEmpty()) {
 
 							for (Proveedores proveedor : lista1) {
@@ -461,7 +470,7 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Mostrar Todo")) {
 				try {
-					ArrayList<Proveedores> lista = TestJSON.getJSONProveedores();
+					ArrayList<Proveedores> lista = TestJSONProveedores.getJSONProveedores();
 					request.setAttribute("lista", lista);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -472,7 +481,7 @@ public class Controlador extends HttpServlet {
 		case "Productos":
 			if (accion.equals("Listar")) {
 				try {
-					ArrayList<Productos> lista = TestJSON.getJSONProductos();
+					ArrayList<Productos> lista = TestJSONProductos.getJSONProductos();
 					request.setAttribute("lista", lista);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -488,7 +497,7 @@ public class Controlador extends HttpServlet {
 
 				int respuesta = 0;
 				try {
-					respuesta = TestJSON.postJSON(producto);
+					respuesta = TestJSONProductos.postJSON(producto);
 					PrintWriter write = response.getWriter();
 					if (respuesta == 200) {
 						request.getRequestDispatcher("Controlador?menu=Productos&accion=Listar").forward(request,
@@ -511,7 +520,7 @@ public class Controlador extends HttpServlet {
 
 				int respuesta = 0;
 				try {
-					respuesta = TestJSON.putJSON(producto, producto.getNitProveedor());
+					respuesta = TestJSONProductos.putJSON(producto, producto.getNitProveedor());
 					PrintWriter write = response.getWriter();
 
 					if (respuesta == 200) {
@@ -527,7 +536,7 @@ public class Controlador extends HttpServlet {
 			} else if (accion.equals("Cargar")) {
 				Long id = Long.parseLong(request.getParameter("id"));
 				try {
-					ArrayList<Productos> lista1 = TestJSON.getJSONProductos();
+					ArrayList<Productos> lista1 = TestJSONProductos.getJSONProductos();
 					System.out.println("Parametro: " + id);
 					for (Productos producto : lista1) {
 						if (producto.getCodigoProducto() == id) {
@@ -543,7 +552,7 @@ public class Controlador extends HttpServlet {
 				Long id = Long.parseLong(request.getParameter("id"));
 				int respuesta = 0;
 				try {
-					respuesta = TestJSON.deleteJSONProductos(id);
+					respuesta = TestJSONProductos.deleteJSONProductos(id);
 					PrintWriter write = response.getWriter();
 					if (respuesta == 200) {
 						request.getRequestDispatcher("Controlador?menu=Productos&accion=Listar").forward(request,
@@ -558,7 +567,7 @@ public class Controlador extends HttpServlet {
 			} else if (accion.equals("Consultar")) {
 				Long id = Long.parseLong(request.getParameter("txtcodigo"));
 				try {
-					ArrayList<Productos> lista1 = TestJSON.getJSONProductos(id);
+					ArrayList<Productos> lista1 = TestJSONProductos.getJSONProductos(id);
 					System.out.println("Parametro: " + id);
 					for (Productos producto : lista1) {
 						if (producto.getCodigoProducto() == id) {
@@ -572,7 +581,7 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Mostrar Todo")) {
 				try {
-					ArrayList<Productos> lista = TestJSON.getJSONProductos();
+					ArrayList<Productos> lista = TestJSONProductos.getJSONProductos();
 					request.setAttribute("lista", lista);
 				} catch (Exception e) {
 					e.printStackTrace();

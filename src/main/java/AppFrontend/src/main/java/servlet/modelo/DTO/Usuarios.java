@@ -1,4 +1,4 @@
-package AppFrontend.src.main.java.servlet;
+package AppFrontend.src.main.java.servlet.modelo.DTO;
 
 
 public class Usuarios {	
