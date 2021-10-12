@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import AppFrontend.src.main.java.servlet.modelo.TestJSON;
+import AppFrontend.src.main.java.servlet.modelo.TestJSONUsuarios;
 import AppFrontend.src.main.java.servlet.modelo.TestJSONClientes;
 import AppFrontend.src.main.java.servlet.modelo.TestJSONProductos;
 import AppFrontend.src.main.java.servlet.modelo.TestJSONProveedores;
@@ -44,7 +44,7 @@ public class Controlador extends HttpServlet {
 			if (accion.equals("Listar")) {
 				try {
 
-					ArrayList<Usuarios> lista = TestJSON.getJSONUsuarios();
+					ArrayList<Usuarios> lista = TestJSONUsuarios.getJSONUsuarios();
 					request.setAttribute("lista", lista);
 
 				} catch (Exception e) {
@@ -64,7 +64,7 @@ public class Controlador extends HttpServlet {
 
 					int respuesta = 0;
 					try {
-						respuesta = TestJSON.postJSON(usuario);
+						respuesta = TestJSONUsuarios.postJSON(usuario);
 						PrintWriter write = response.getWriter();
 						if (respuesta == 200) {
 
@@ -96,7 +96,7 @@ public class Controlador extends HttpServlet {
 
 						int respuesta = 0;
 						try {
-							respuesta = TestJSON.putJSON(usuario, usuario.getCedulaUsuario());
+							respuesta = TestJSONUsuarios.putJSON(usuario, usuario.getCedulaUsuario());
 							PrintWriter write = response.getWriter();
 
 							if (respuesta == 200) {
@@ -120,7 +120,7 @@ public class Controlador extends HttpServlet {
 			} else if (accion.equals("Cargar")) {
 				Long id = Long.parseLong(request.getParameter("id"));
 				try {
-					ArrayList<Usuarios> lista1 = TestJSON.getJSONUsuarios();
+					ArrayList<Usuarios> lista1 = TestJSONUsuarios.getJSONUsuarios();
 					System.out.println("Parametro: " + id);
 					for (Usuarios usuarios : lista1) {
 						if (usuarios.getCedulaUsuario() == id) {
@@ -137,7 +137,7 @@ public class Controlador extends HttpServlet {
 					Long id = Long.parseLong(request.getParameter("txtcedula"));
 					int respuesta = 0;
 					try {
-						respuesta = TestJSON.deleteJSONUsuarios(id);
+						respuesta = TestJSONUsuarios.deleteJSONUsuarios(id);
 						PrintWriter write = response.getWriter();
 						if (respuesta == 200) {
 							request.getRequestDispatcher("Controlador?menu=Usuarios&accion=Listar").forward(request,
@@ -159,7 +159,7 @@ public class Controlador extends HttpServlet {
 				if (request.getParameter("txtcedula") != "") {
 					Long id = Long.parseLong(request.getParameter("txtcedula"));
 					try {
-						ArrayList<Usuarios> lista1 = TestJSON.getJSONUsuarios(id);
+						ArrayList<Usuarios> lista1 = TestJSONUsuarios.getJSONUsuarios(id);
 						if (!lista1.isEmpty()) {
 
 							for (Usuarios usuarios : lista1) {
@@ -180,7 +180,7 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("Mostrar Todo")) {
 				try {
-					ArrayList<Usuarios> lista = TestJSON.getJSONUsuarios();
+					ArrayList<Usuarios> lista = TestJSONUsuarios.getJSONUsuarios();
 					request.setAttribute("lista", lista);
 				} catch (Exception e) {
 					e.printStackTrace();

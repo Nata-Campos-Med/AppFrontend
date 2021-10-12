@@ -20,7 +20,7 @@ import AppFrontend.src.main.java.servlet.modelo.DTO.Productos;
 import AppFrontend.src.main.java.servlet.modelo.DTO.Proveedores;
 import AppFrontend.src.main.java.servlet.modelo.DTO.Usuarios;
 
-public class TestJSON {
+public class TestJSONUsuarios {
 	private static URL url;
 	private static String sitio = "http://localhost:5000/";
 

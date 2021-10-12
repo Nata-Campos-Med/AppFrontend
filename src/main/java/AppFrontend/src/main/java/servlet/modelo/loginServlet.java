@@ -28,7 +28,7 @@ public class loginServlet extends HttpServlet {
 	    
 		try {
 			
-			ArrayList<Usuarios> lista = TestJSON.getJSONUsuarios();
+			ArrayList<Usuarios> lista = TestJSONUsuarios.getJSONUsuarios();
 			request.setAttribute("lista", lista);
 			String usua = request.getParameter("txtusuario");
 			String pass = request.getParameter("txtpassword");
