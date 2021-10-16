@@ -93,47 +93,49 @@
     </nav>
 
     <main>
-        <!-- <section id="message-section" class="message-section">
-            <div class="message success-message">
-                <p>
-                    Selecciona una de las opciones del menu para empezar
-                </p>
-                <i class="fas fa-times close-message"></i>
-            </div>
-        </section> -->
+<!--          <section id="message-section" class="message-section"> -->
+<!--              <div class="message success-message"> -->
+<!--                  <p>  -->
+<!--                      Selecciona una de las opciones del menu para empezar -->
+<!--                  </p> -->
+<!--                  <i class="fas fa-times close-message"></i> -->
+<!--              </div> -->
+<!--          </section> -->
         <form id="form-people" class="form-people" action="Controlador" method="get">
         <input type="hidden" name="menu" value="Usuarios">
             <h2 id="title-section" class="title-section">Usuarios</h2>
             <div class="input-group-section" id="input-group-section">
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-1" type="text" title="Cédula" name="txtcedula" value="${usuarioSeleccionado.getCedulaUsuario()}">
+                    <input class="input-general" id="input-data-1" type="number" title="Cédula" name="txtcedula" value="${usuarioSeleccionado.getCedulaUsuario()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-1">Cédula</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-2" type="text" title="Nombre" name="txtnombre" value="${usuarioSeleccionado.getNombreUsuario()}">
+                    <input class="input-general" id="input-data-2" type="text" title="Nombre" name="txtnombre" value="${usuarioSeleccionado.getNombreUsuario()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-2">Nombre Completo</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-3" type="text" title="E-mail" name="txtemail" value="${usuarioSeleccionado.getEmailUsuario()}">
+                    <input class="input-general" id="input-data-3" type="text" title="E-mail" name="txtemail" value="${usuarioSeleccionado.getEmailUsuario()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-3">Correo Electronico</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-4" type="text" title="Nick" name="txtusuario" value="${usuarioSeleccionado.getUsuario()}">
+                    <input class="input-general" id="input-data-4" type="text" title="Nick" name="txtusuario" value="${usuarioSeleccionado.getUsuario()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-4">Usuario</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Password" name="txtpassword" value="${usuarioSeleccionado.getPassword()}">
+                    <input class="input-general" id="input-data-5" type="text" title="Password" name="txtpassword" value="${usuarioSeleccionado.getPassword()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-5">Contraseña</span>
                 </label>
             </div>
             <div id="crud-section" class="crud-section">
-                <button class="btn-admin-crud" type="submit" title="Agregar" name="accion" value="Agregar"><img src="./images/plus.svg" alt=""></button>
+                <button class="btn-admin-crud" id="button-add" type="submit" title="Agregar" name="accion" value="Agregar"><img src="./images/plus.svg" alt=""></button>
                 <button class="btn-admin-crud" type="submit" title="Actualizar" name="accion" value="Actualizar"><img src="./images/update.svg" alt=""></button>
                 <button class="btn-admin-crud" type="submit" title="Consular" name="accion" value="Consultar"><img src="./images/search.svg" alt=""></button>
                 <button class="btn-admin-crud" type="submit" title="Eliminar" name="accion" value="Eliminar"><img src="./images/delete.svg" alt=""></button>
             </div>
         </form>
     </main>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/users.js"></script>
 </body>
 </html>

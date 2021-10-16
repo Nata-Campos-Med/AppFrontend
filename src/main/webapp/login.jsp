@@ -44,11 +44,11 @@
                 	<i id="close-message" class="fas fa-times close-message"></i>
             </div>
             <label class="input-container-login input-container-general input-user-container-login">
-                <input class="input-login input-user input-general" id="input-user" type="text" autocomplete="nickname" name="txtusuario" title="Ingrese su usuario" required>
+                <input class="input-login input-user input-general" id="input-user" type="text" autocomplete="off" name="txtusuario" title="Ingrese su usuario" required>
                 <span class="input-span-general" id="input-span-user">Ingrese su usuario</span>
             </label>
             <label class="input-container-login input-container-general input-password-container-login">
-                <input class="input-login input-password input-general" id="input-password" type="password" autocomplete="password" name="txtpassword" title="Ingrese su contraseña" required>
+                <input class="input-login input-password input-general" id="input-password" type="password" autocomplete="off" name="txtpassword" title="Ingrese su contraseña" required>
                 <span class="input-span-general">Ingrese su contraseña</span>
                 <button type="button" id="btn-view-password" class="btn-view-password" title="Ver u ocultar contraseña"></button>
             </label>

@@ -106,23 +106,23 @@
             <h2 id="title-section" class="title-section">Proveedores</h2>
             <div class="input-group-section" id="input-group-section">
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-1" type="text" title="NIT" name="txtnit" value="${proveedorSeleccionado.getNitProveedor()}">
+                    <input class="input-general" id="input-data-1" type="number" title="NIT" name="txtnit" value="${proveedorSeleccionado.getNitProveedor()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-1">NIT</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-4" type="text" title="Nombre Proveedor" name="txtnombre" value="${proveedorSeleccionado.getNombreProveedor()}">
+                    <input class="input-general" id="input-data-4" type="text" title="Nombre Proveedor" name="txtnombre" value="${proveedorSeleccionado.getNombreProveedor()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-4">Nombre Proveedor</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-2" type="text" title="Dirección" name="txtdireccion" value="${proveedorSeleccionado.getDireccionProveedor()}">
+                    <input class="input-general" id="input-data-2" type="text" title="Dirección" name="txtdireccion" value="${proveedorSeleccionado.getDireccionProveedor()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-2">Dirección</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-3" type="text" title="Teléfono" name="txttelefono" value="${proveedorSeleccionado.getTelefonoProveedor()}">
+                    <input class="input-general" id="input-data-3" type="text" title="Teléfono" name="txttelefono" value="${proveedorSeleccionado.getTelefonoProveedor()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-3">Teléfono</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Ciudad" name="txtciudad" value="${proveedorSeleccionado.getCiudadProveedor()}">
+                    <input class="input-general" id="input-data-5" type="text" title="Ciudad" name="txtciudad" value="${proveedorSeleccionado.getCiudadProveedor()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-5">Ciudad</span>
                 </label>
             </div>

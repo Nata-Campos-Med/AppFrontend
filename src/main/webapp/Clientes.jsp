@@ -106,23 +106,23 @@
             <h2 id="title-section" class="title-section">Clientes</h2>
             <div class="input-group-section" id="input-group-section">
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-1" type="text" title="Cédula" name="txtcedula" value="${clienteSeleccionado.getCedulaCliente()}">
+                    <input class="input-general" id="input-data-1" type="number" title="Cédula" name="txtcedula" value="${clienteSeleccionado.getCedulaCliente()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-1">Cédula</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-2" type="text" title="Nombre Completo" name="txtnombre" value="${clienteSeleccionado.getNombreCliente()}">
+                    <input class="input-general" id="input-data-2" type="text" title="Nombre Completo" name="txtnombre" value="${clienteSeleccionado.getNombreCliente()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-2">Nombre Completo</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-3" type="text" title="Dirección" name="txtdireccion" value="${clienteSeleccionado.getDireccionCliente()}">
+                    <input class="input-general" id="input-data-3" type="text" title="Dirección" name="txtdireccion" value="${clienteSeleccionado.getDireccionCliente()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-3">Dirección</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-4" type="text" title="Teléfono" name="txttelefono" value="${clienteSeleccionado.getTelefonoCliente()}">
+                    <input class="input-general" id="input-data-4" type="text" title="Teléfono" name="txttelefono" value="${clienteSeleccionado.getTelefonoCliente()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-4">Teléfono</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Correo Electronico" name="txtemail" value="${clienteSeleccionado.getEmailCliente()}"">
+                    <input class="input-general" id="input-data-5" type="text" title="Correo Electronico" name="txtemail" value="${clienteSeleccionado.getEmailCliente()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-5">Correo Electronico</span>
                 </label>
             </div>

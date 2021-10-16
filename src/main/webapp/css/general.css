@@ -9,6 +9,10 @@
     font-size: 1.5rem;
 }
 
+#input-data-1 {
+	padding-right: 20px;
+}
+
 .input-container-general {
     position: relative;
 }

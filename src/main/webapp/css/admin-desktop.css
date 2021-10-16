@@ -141,7 +141,7 @@ main {
     main {
         width: 80%;
         max-width: 1250px;
-        flex-direction: row;
+/*        	flex-direction: row; */
     }
 
     .message-section {
