@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import AppFrontend.src.main.java.servlet.modelo.TestJSONUsuarios;
+import AppFrontend.src.main.java.servlet.modelo.TestJSONVentas;
 import AppFrontend.src.main.java.servlet.modelo.TestJSONClientes;
 import AppFrontend.src.main.java.servlet.modelo.TestJSONProductos;
 import AppFrontend.src.main.java.servlet.modelo.TestJSONProveedores;
@@ -20,6 +21,7 @@ import AppFrontend.src.main.java.servlet.modelo.DTO.Clientes;
 import AppFrontend.src.main.java.servlet.modelo.DTO.Productos;
 import AppFrontend.src.main.java.servlet.modelo.DTO.Proveedores;
 import AppFrontend.src.main.java.servlet.modelo.DTO.Usuarios;
+import AppFrontend.src.main.java.servlet.modelo.DTO.Ventas;
 
 @WebServlet("/Controlador")
 public class Controlador extends HttpServlet {
@@ -188,7 +190,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese una cédula.\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese una cï¿½dula.\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Usuarios.jsp\"})"
 							+ "</script>");
@@ -272,7 +274,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese una cédula.\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese una cï¿½dula.\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Usuarios.jsp\"})"
 							+ "</script>");
@@ -329,7 +331,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese una cédula.\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese una cï¿½dula.\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Usuarios.jsp\"})"
 							+ "</script>");
@@ -490,7 +492,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese cédula\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese cï¿½dula\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
 							+ "</script>");
@@ -558,7 +560,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese cédula\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese cï¿½dula\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
 							+ "</script>");
@@ -615,7 +617,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese cédula\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese cï¿½dula\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
 							+ "</script>");
@@ -852,7 +854,7 @@ public class Controlador extends HttpServlet {
 					out.close();
 
 				}
-			}  else if (accion.equals("Consultar")) {
+			} else if (accion.equals("Consultar")) {
 				if (request.getParameter("txtnit") != "") {
 					Long id = Long.parseLong(request.getParameter("txtnit"));
 					try {
@@ -990,7 +992,7 @@ public class Controlador extends HttpServlet {
 					e.printStackTrace();
 				}
 			} else if (accion.equals("Eliminar")) {
-				Long id = Long.parseLong(request.getParameter("id"));
+				Long id = Long.parseLong(request.getParameter("txtcodigo"));
 				int respuesta = 0;
 				try {
 					respuesta = TestJSONProductos.deleteJSONProductos(id);
@@ -1033,6 +1035,41 @@ public class Controlador extends HttpServlet {
 		case "Ventas":
 			request.getRequestDispatcher("/Ventas.jsp").forward(request, response);
 			break;
+		case "Reportes":
+			int opcion = 0;
+
+			if (accion.equals("ReporteUsuarios")) {
+				opcion = 1;
+				try {
+					ArrayList<Usuarios> lista = TestJSONUsuarios.getJSONUsuarios();
+					request.setAttribute("listaUsuarios", lista); // envio el arraylist
+					request.setAttribute("opcion", opcion); // variable creada
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("ReporteClientes")) {
+				opcion = 2;
+				try {
+					ArrayList<Clientes> lista = TestJSONClientes.getJSONClientes();
+					request.setAttribute("listaClientes", lista); // envio el arraylist
+					request.setAttribute("opcion", opcion); // variable creada
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			} else if (accion.equals("ReporteVentas")) {
+				opcion = 3;
+				try {
+					ArrayList<Ventas> lista = TestJSONVentas.getJSONVentas();
+					request.setAttribute("listaVentas", lista); // envio el arraylist
+					request.setAttribute("opcion", opcion); // variable crada
+				} catch (Exception e) {
+					e.printStackTrace();
+
+				}
+			}
+			request.getRequestDispatcher("/Reportes.jsp").forward(request, response);
+			break;
+
 		case "Salir":
 			request.getRequestDispatcher("/login.jsp").forward(request, response);
 			break;
