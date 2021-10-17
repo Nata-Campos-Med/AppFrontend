@@ -41,7 +41,7 @@
             </a>
         </div>
         <div class="navbar-btn">
-            <a class="btn-admin white" id="btn-users" href="Controlador?menu=Usuarios&accion=Listar">
+            <a class="btn-admin" id="btn-users" href="Controlador?menu=Usuarios&accion=Listar">
                 <span class="btn-span">Usuarios</span>
                 <img src="./images/user.svg" alt="user">
             </a>
@@ -53,7 +53,7 @@
                 <span class="btn-span">Proveedores</span>
                 <img src="./images/supplier.svg" alt="supplier">
             </a>
-            <a class="btn-admin" id="btn-products" href="Controlador?menu=Productos&accion=Listar">
+            <a class="btn-admin white" id="btn-products" href="Controlador?menu=Productos&accion=Listar">
                 <span class="btn-span">Productos</span>
                 <img src="./images/product.svg" alt="product">
             </a>
@@ -106,27 +106,27 @@
             <h2 id="title-section" class="title-section">Productos</h2>
             <div class="input-group-section" id="input-group-section">
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-1" type="text" title="Cédula" name="txtcodigo" value="${productoSeleccionado.getCodigoProducto()}">
+                    <input class="input-general" id="input-data-1" type="text" title="Cédula" name="txtcodigo" value="${productoSeleccionado.getCodigoProducto()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-1">Codigo Producto</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-2" type="text" title="Nombre" name="txtnombre" value="${productoSeleccionado.getNombreProducto()}">
+                    <input class="input-general" id="input-data-2" type="text" title="Nombre" name="txtnombre" value="${productoSeleccionado.getNombreProducto()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-2">Nombre Producto</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-3" type="text" title="E-mail" name="txtnit_proveedor" value="${productoSeleccionado.getNitProveedor()}">
+                    <input class="input-general" id="input-data-3" type="text" title="E-mail" name="txtnit_proveedor" value="${productoSeleccionado.getNitProveedor()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-3">Nit Proveedor</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-4" type="text" title="Nick" name="txtprecio_compra" value="${productoSeleccionado.getPrecioCompra()}">
+                    <input class="input-general" id="input-data-4" type="text" title="Nick" name="txtprecio_compra" value="${productoSeleccionado.getPrecioCompra()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-4">Precio Compra</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Password" name="txtiva_compra" value="${productoSeleccionado.getIvaCompra()}">
+                    <input class="input-general" id="input-data-5" type="text" title="Password" name="txtiva_compra" value="${productoSeleccionado.getIvaCompra()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-5">Iva Compra</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Password" name="txtprecio_venta" value="${productoSeleccionado.getPrecioVenta()}">
+                    <input class="input-general" id="input-data-5" type="text" title="Password" name="txtprecio_venta" value="${productoSeleccionado.getPrecioVenta()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-5">Precio Venta </span>
                 </label>
             </div>
