@@ -3,11 +3,19 @@ package AppFrontend.src.main.java.servlet.modelo.DTO;
 public class Ventas {
 
 	private long codigoVenta;
-	private long cedulaCliente;
-	
+	private long cedulaCliente;	
 	private double valorVenta;
 	private double ivaVenta;
 	private double totalVenta;
+	private String nombreCliente;
+		
+	public String getNombreCliente() {
+		return nombreCliente;
+	}
+
+	public void setNombreCliente(String nombreCliente) {
+		this.nombreCliente = nombreCliente;
+	}
 
 	public long getCodigoVenta() {
 		return codigoVenta;

@@ -1,8 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- 
-<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,16 +88,32 @@
 					<c:if test="${opcion==3}">
 						<thead>
 							<tr>
-								<th scope="col">Cedula</th>
-								<th scope="col">Nombre</th>
-								<th scope="col">Valor Ventas Totales</th>
-								
+								<th scope="col">Cedula Cliente</th>
+								<th scope="col">Nombre Cliente</th>
+								<th scope="col">Total venta</th>
 								
 							</tr>							
 						</thead>
-						 <tbody>
-            
-        </tbody>
+						<c:forEach var="lista" items="${listaVentas}">
+						<tbody>					
+							<tr>
+								<th>${lista.getCedulaCliente()}</th>
+								<th>${lista.getNombreCliente()}</th>
+								<th>${lista.getTotalVenta()}</th>								
+							</tr>	
+						</c:forEach>				
+						</tbody>
+						<table>
+						<form>
+						<div class="form-group d-flex">
+						<div class="col-sm-6 d-flex">
+						<tr>
+						<th>${totalVenta}</th>
+						</tr>
+						</div>
+						</div>
+						</form>
+						</table>
 					</c:if>
 					</table>
 				</div>

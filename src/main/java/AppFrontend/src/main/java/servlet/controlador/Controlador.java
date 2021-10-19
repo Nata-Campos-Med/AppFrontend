@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.simple.parser.ParseException;
+
 import AppFrontend.src.main.java.servlet.modelo.TestJSONUsuarios;
 import AppFrontend.src.main.java.servlet.modelo.TestJSONVentas;
 import AppFrontend.src.main.java.servlet.modelo.TestJSONClientes;
@@ -32,9 +34,9 @@ public class Controlador extends HttpServlet {
 
 	// ***********variables generales dentro de la clase contralador
 	// *****************
-	long totalapagar = 0;
-	long codProducto = 0, subtotaliva = 0, acusubtotal = 0;
-	double valor_iva = 0;
+	double totalapagar = 0, totalVenta = 0;
+	long codProducto = 0;
+	double valor_iva = 0 , subtotaliva = 0, acusubtotal = 0;
 	double iva = 0;
 	double subtotal = 0;
 	double precio = 0;
@@ -68,6 +70,22 @@ public class Controlador extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public Clientes buscarClienteC(Long id, HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		Clientes clientereturn = null ;
+		try {
+			ArrayList<Clientes> listac = TestJSONClientes.getJSONClientes();
+			for (Clientes clientes : listac) {
+				if (clientes.getCedulaCliente() == (id)) {
+					request.setAttribute("clienteSeleccionado", clientes);
+					clientereturn =  clientes;
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return clientereturn;
 	}
 
 	public void buscarUsuario(Long cus, HttpServletRequest request, HttpServletResponse response)
@@ -126,7 +144,7 @@ public class Controlador extends HttpServlet {
 				if (respuesta == 200) {
 					System.out.println("Registros Grabados detalle ventas");
 				} else {
-					write.println("Error Detalle venta" + respuesta);
+					
 				}
 				write.close();
 			} catch (Exception e) {
@@ -1018,8 +1036,20 @@ public class Controlador extends HttpServlet {
 					e.printStackTrace();
 				}
 			} else if (accion.equals("Agregar")) {
+				long productoMayor = 0;
+				try {
+					ArrayList<Productos> lista = TestJSONProductos.getJSONProductos();
+					for(Productos producto : lista) {
+						if (producto.getCodigoProducto()>productoMayor) {
+							productoMayor = producto.getCodigoProducto();
+						}
+					}
+				} catch (IOException | ParseException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}			
 				Productos producto = new Productos();
-				producto.setCodigoProducto(Long.parseLong(request.getParameter("txtcodigo")));
+				
 				producto.setNombreProducto(request.getParameter("txtnombre"));
 				producto.setNitProveedor(Long.parseLong(request.getParameter("txtnit_proveedor")));
 				producto.setPrecioCompra(Double.parseDouble(request.getParameter("txtprecio_compra")));
@@ -1155,11 +1185,12 @@ public class Controlador extends HttpServlet {
 					precio = Double.parseDouble(request.getParameter("precioproducto"));
 					cantidad = Integer.parseInt(request.getParameter("cantidadproducto"));
 					iva = Double.parseDouble(request.getParameter("ivaproducto"));
+					String numFact = request.getParameter("numerofactura");
 
 					subtotal = (precio * cantidad);
 					valor_iva = subtotal * iva / 100;
 					// almacena temporalmente cada producto
-					
+					detalleVenta.setCodigoDetalleVenta(item);
 					detalleVenta.setCodigoProducto(codProducto);
 					detalleVenta.setDescripcionProducto(descripcion);
 					detalleVenta.setPrecioProducto(precio);
@@ -1187,13 +1218,13 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("GenerarVenta")) {
 				cedulaCliente = Long.parseLong(request.getParameter("cedulacliente"));
-				String nombreCliente = request.getParameter("nombrecliente");
+				Clientes cliente = this.buscarClienteC(cedulaCliente, request, response);
 				
 				String numFact = request.getParameter("numerofactura");
 				Ventas ventas = new Ventas();
 				ventas.setCodigoVenta(Long.parseLong(numFact));
 				ventas.setCedulaCliente(cedulaCliente);
-			
+				ventas.setNombreCliente(cliente.getNombreCliente());		
 				ventas.setIvaVenta(subtotaliva);
 				ventas.setValorVenta(acusubtotal);
 				ventas.setTotalVenta(totalapagar);
@@ -1204,7 +1235,8 @@ public class Controlador extends HttpServlet {
 					PrintWriter write = response.getWriter();
 					if (respuesta == 200) {
 						System.out.println("Grabacion Exitosa " + respuesta);
-						this.grabarDetalle(ventas.getCodigoVenta(), request, response);
+//						this.grabarDetalle(ventas.getCodigoVenta(), request, response);
+						request.getRequestDispatcher("/Ventas.jsp").forward(request, response);
 					} else {
 						write.println("error ventas");
 					}
@@ -1244,11 +1276,16 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("ReporteVentas")) {
 				opcion = 3;
+				totalVenta = 0;
 				try {
 					ArrayList<Ventas> lista = TestJSONVentas.getJSONVentas();
+					for(Ventas venta : lista) {
+						totalVenta += venta.getTotalVenta();
+					}
 
 					request.setAttribute("listaVentas", lista); // envio el arraylist
 					request.setAttribute("opcion", opcion); // variable crada
+					request.setAttribute("totalVenta", totalVenta);
 				} catch (Exception e) {
 					e.printStackTrace();
 

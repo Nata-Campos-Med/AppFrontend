@@ -11,6 +11,7 @@ public class DetalleVentas {
 	private double valorVenta;
 	private double valorIva;
 	private double precioProducto; // temporal
+	
 	public long getCodigoDetalleVenta() {
 		return codigoDetalleVenta;
 	}
