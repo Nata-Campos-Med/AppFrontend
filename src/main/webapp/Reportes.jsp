@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@page import="AppFrontend.src.main.java.servlet.modelo.DTO.ReporteVentas"%>
+ 
 <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
@@ -98,17 +98,7 @@
 							</tr>							
 						</thead>
 						 <tbody>
-            <% ArrayList<ReporteVentas> lista= (ArrayList<ReporteVentas>) request.getAttribute("listaVentas");
-			for (ReporteVentas reporteVentas:lista){
-			%>
-			<tr>
-				<td><%=reporteVentas.getCedulaCliente()%></td>
-				<td><%=reporteVentas.getNombreCliente()%></td>
-				<td><%=reporteVentas.getTotalVenta()%></td>
-				
-				
-            </tr>
-            <%}%>
+            
         </tbody>
 					</c:if>
 					</table>

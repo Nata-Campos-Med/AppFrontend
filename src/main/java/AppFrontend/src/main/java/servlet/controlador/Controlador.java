@@ -292,7 +292,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese una c�dula.\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese una cédula.\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Usuarios.jsp\"})"
 							+ "</script>");
@@ -375,7 +375,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese una c�dula.\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese una cédula.\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Usuarios.jsp\"})"
 							+ "</script>");
@@ -431,7 +431,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese una c�dula.\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese una cédula.\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Usuarios.jsp\"})"
 							+ "</script>");
@@ -588,7 +588,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese c�dula\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese cédula\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
 							+ "</script>");
@@ -655,7 +655,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese c�dula\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese cédula\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
 							+ "</script>");
@@ -711,7 +711,7 @@ public class Controlador extends HttpServlet {
 					out.println("<body>");
 					out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 					out.println("<script>"
-							+ "	swal(\"Ingrese c�dula\", \"\", \"warning\", {closeOnClickOutside: false});"
+							+ "	swal(\"Ingrese cédula\", \"\", \"warning\", {closeOnClickOutside: false});"
 							+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 							+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Clientes.jsp\"})"
 							+ "</script>");
@@ -1159,7 +1159,7 @@ public class Controlador extends HttpServlet {
 					subtotal = (precio * cantidad);
 					valor_iva = subtotal * iva / 100;
 					// almacena temporalmente cada producto
-					detalleVenta.setCodigoDetalleVenta(item);
+					
 					detalleVenta.setCodigoProducto(codProducto);
 					detalleVenta.setDescripcionProducto(descripcion);
 					detalleVenta.setPrecioProducto(precio);
@@ -1187,6 +1187,7 @@ public class Controlador extends HttpServlet {
 				}
 			} else if (accion.equals("GenerarVenta")) {
 				cedulaCliente = Long.parseLong(request.getParameter("cedulacliente"));
+				String nombreCliente = request.getParameter("nombrecliente");
 				
 				String numFact = request.getParameter("numerofactura");
 				Ventas ventas = new Ventas();
