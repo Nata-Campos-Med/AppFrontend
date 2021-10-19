@@ -58,7 +58,7 @@
                 <span class="btn-span">Ventas</span>
                 <img src="./images/sale.svg" alt="sales">
             </a>
-            <a class="btn-admin" id="btn-reports" href="Controlador?menu=Reportes">
+            <a class="btn-admin" id="btn-reports" href="./Reportes.jsp">
                 <span class="btn-span">Reportes</span>
                 <img src="./images/report.svg" alt="reports">
             </a>
@@ -67,7 +67,7 @@
             <div class="menu__container-profile container-icon">
                 <i class="fas fa-user-circle"></i>
                 <div class="profile">
-                    <h3>${usuario.getNombreUsuario()}</h3>
+                    <h3><input type="hidden" name="UsuarioActivo" value="${usuarioSeleccionado.getCedulaUsuario()}" ></h3>
                     <div class="sign-out">
                         <a href="./login.jsp">Cerrar sesión</a>
                         <i class="fas fa-sign-out-alt"></i>

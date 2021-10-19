@@ -22,6 +22,7 @@ public class TestJSONVentas {
 
 	private static URL url;
 	private static String sitio = "http://localhost:5000/";
+	//	private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
 	
 	public static ArrayList<Ventas> parsingVentas(String json) throws ParseException {// devulve un arraylist
 		JSONParser jsonParser = new JSONParser();
@@ -33,8 +34,7 @@ public class TestJSONVentas {
 			Ventas Venta = new Ventas();
 																
 			Venta.setCodigoVenta(Long.parseLong(innerObj.get("codigoVenta").toString()));
-			Venta.setCedulaCliente(Long.parseLong(innerObj.get("cedulaCliente").toString()));
-			Venta.setCedulaUsuario(Long.parseLong(innerObj.get("cedulaUsuario").toString()));
+			Venta.setCedulaCliente(Long.parseLong(innerObj.get("cedulaCliente").toString()));			
 			Venta.setValorVenta(Double.parseDouble( innerObj.get("valorVenta").toString()));
 			Venta.setIvaVenta(Double.parseDouble( innerObj.get("ivaVenta").toString()));
 			Venta.setTotalVenta(Double.parseDouble( innerObj.get("totalVenta").toString()));
@@ -94,6 +94,34 @@ public class TestJSONVentas {
 		http.disconnect();
 		return lista;
 	}
+	public static Ventas getJSONVenta(Long id) throws IOException, ParseException { // devolver un
+		// listado JSON
+
+		url = new URL(sitio + "ventas/listar"); // trae el metodo de Usuarios.API
+		HttpURLConnection http = (HttpURLConnection) url.openConnection();
+
+		http.setRequestMethod("GET");
+		http.setRequestProperty("Accept", "application/json");
+
+		InputStream respuesta = http.getInputStream();
+		byte[] inp = respuesta.readAllBytes();
+		String json = "";
+
+		for (int i = 0; i < inp.length; i++) {
+			json += (char) inp[i];
+		}
+		ArrayList<Ventas> listaTemporal = new ArrayList<Ventas>();
+		Ventas lista = new Ventas();
+		listaTemporal = parsingVentas(json);
+
+		for (Ventas venta : listaTemporal) {
+			if (venta.getCedulaCliente() == id) {
+				lista = venta;
+			}
+		}
+		http.disconnect();
+		return lista;
+	}
 
 	public static int postJSON(Ventas ventas) throws IOException {
 
@@ -112,8 +140,7 @@ public class TestJSONVentas {
 		http.setRequestProperty("Content-Type", "application/json");
 
 		String data = "{" + "\"codigoVenta\":\"" + String.valueOf(ventas.getCodigoVenta())
-				+ "\",\"cedulaCliente\": \"" + String.valueOf(ventas.getCedulaCliente())
-				+ "\",\"cedulaUsuario\": \""	+ String.valueOf(ventas.getCedulaUsuario()) 
+				+ "\",\"cedulaCliente\": \"" + String.valueOf(ventas.getCedulaCliente())				
 				+ "\",\"valorVenta\":\""	+ String.valueOf(ventas.getValorVenta())
 				+ "\",\"ivaVenta\":\""	+ String.valueOf(ventas.getIvaVenta())
 				+ "\",\"totalVenta\":\"" + String.valueOf(ventas.getTotalVenta()) + "\"}";
@@ -144,8 +171,7 @@ public class TestJSONVentas {
 		http.setRequestProperty("Content-Type", "application/json");
 
 		String data = "{" + "\"codigoVenta\":\"" + id 
-				+ "\",\"cedulaCliente\": \"" + String.valueOf(ventas.getCedulaCliente())
-				+ "\",\"cedulaUsuario\": \""	+ String.valueOf(ventas.getCedulaUsuario()) 
+				+ "\",\"cedulaCliente\": \"" + String.valueOf(ventas.getCedulaCliente())				
 				+ "\",\"valorVenta\":\""	+ String.valueOf(ventas.getValorVenta())
 				+ "\",\"ivaVenta\":\""	+ String.valueOf(ventas.getIvaVenta())
 				+ "\",\"totalVenta\":\"" + String.valueOf(ventas.getTotalVenta()) + "\"}";

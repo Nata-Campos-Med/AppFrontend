@@ -312,7 +312,7 @@ main {
 .form-people {
     display: flex;
     width: 100%;
-    height: auto;
+    height: 60%;
     flex-direction: column;
     justify-content: flex-end;
     gap: 20px

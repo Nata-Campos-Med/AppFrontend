@@ -23,6 +23,7 @@ import AppFrontend.src.main.java.servlet.modelo.DTO.Usuarios;
 public class TestJSONUsuarios {
 	private static URL url;
 	private static String sitio = "http://localhost:5000/";
+	//	private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
 
 	// ***********************************************************************************************************************************************
 	// modulo de Usuarios
@@ -101,7 +102,34 @@ public class TestJSONUsuarios {
 		http.disconnect();
 		return lista;
 	}
+	public static Usuarios getJSONUsuario(Long id) throws IOException, ParseException { // devolver un
+		// listado JSON
 
+		url = new URL(sitio + "usuarios/listar"); // trae el metodo de Usuarios.API
+		HttpURLConnection http = (HttpURLConnection) url.openConnection();
+
+		http.setRequestMethod("GET");
+		http.setRequestProperty("Accept", "application/json");
+
+		InputStream respuesta = http.getInputStream();
+		byte[] inp = respuesta.readAllBytes();
+		String json = "";
+
+		for (int i = 0; i < inp.length; i++) {
+			json += (char) inp[i];
+		}
+		ArrayList<Usuarios> listaTemporal = new ArrayList<Usuarios>();
+		Usuarios lista = new Usuarios();
+		listaTemporal = parsingUsuarios(json);
+
+		for (Usuarios usuario : listaTemporal) {
+			if (usuario.getCedulaUsuario() == id) {
+				lista = usuario;
+			}
+		}
+		http.disconnect();
+		return lista;
+	}
 	public static int postJSON(Usuarios usuario) throws IOException {
 
 		url = new URL(sitio + "usuarios/guardar");

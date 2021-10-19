@@ -23,6 +23,10 @@ public class loginServlet extends HttpServlet {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	public Usuarios validarUsuario(Usuarios usuarioLogeado) {
+		return usuarioLogeado;}
+	
+	
 
 	public void validarUsuarios(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -37,8 +41,9 @@ public class loginServlet extends HttpServlet {
 			for (Usuarios usuario : lista) {
 				if (usuario.getUsuario().equals(usua) && usuario.getPassword().equals(pass)) {
 					request.setAttribute("usuario", usuario);
-					request.getRequestDispatcher("/menu.jsp").forward(request, response);
+					request.getRequestDispatcher("/menu.jsp").forward(request, response);					
 					respuesta = 1;
+					validarUsuario(usuario);
 				}
 
 			}

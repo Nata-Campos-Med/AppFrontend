@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@page import="AppFrontend.src.main.java.servlet.modelo.DTO.ReporteVentas"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -88,28 +90,26 @@
 					<c:if test="${opcion==3}">
 						<thead>
 							<tr>
-								<th scope="col">#</th>
-								<th scope="col">codigo</th>
-								<th scope="col">producto</th>
-								<th scope="col">precio</th>
-								<th scope="col">cantidad</th>
-								<th scope="col">iva</th>
-								<th scope="col">total</th>
+								<th scope="col">Cedula</th>
+								<th scope="col">Nombre</th>
+								<th scope="col">Valor Ventas Totales</th>
+								
+								
 							</tr>							
 						</thead>
-						<c:forEach var="lista" items="${listaVentas}">
-						<tbody>					
-							<tr>
-								<th>${lista.getCodigo_detalle_venta()}</th>
-								<th>${lista.getCodigo_producto()}</th>
-								<th>${lista.getDescripcion_producto()}</th>
-								<th>${lista.getPrecio_producto()}</th>
-								<th>${lista.getCantidad_producto()}</th>
-								<th>${lista.getValor_iva()}</th>
-								<th>${lista.getValor_venta()}</th>
-							</tr>	
-						</c:forEach>				
-						</tbody>
+						 <tbody>
+            <% ArrayList<ReporteVentas> lista= (ArrayList<ReporteVentas>) request.getAttribute("listaVentas");
+			for (ReporteVentas reporteVentas:lista){
+			%>
+			<tr>
+				<td><%=reporteVentas.getCedulaCliente()%></td>
+				<td><%=reporteVentas.getNombreCliente()%></td>
+				<td><%=reporteVentas.getTotalVenta()%></td>
+				
+				
+            </tr>
+            <%}%>
+        </tbody>
 					</c:if>
 					</table>
 				</div>

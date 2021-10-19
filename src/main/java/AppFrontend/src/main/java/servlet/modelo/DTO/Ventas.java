@@ -4,7 +4,7 @@ public class Ventas {
 
 	private long codigoVenta;
 	private long cedulaCliente;
-	private long cedulaUsuario;
+	
 	private double valorVenta;
 	private double ivaVenta;
 	private double totalVenta;
@@ -25,13 +25,7 @@ public class Ventas {
 		this.cedulaCliente = cedulaCliente;
 	}
 
-	public long getCedulaUsuario() {
-		return cedulaUsuario;
-	}
-
-	public void setCedulaUsuario(long cedulaUsuario) {
-		this.cedulaUsuario = cedulaUsuario;
-	}
+	
 
 	public double getValorVenta() {
 		return valorVenta;

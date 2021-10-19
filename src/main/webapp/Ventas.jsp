@@ -37,6 +37,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<div class="card">
 					<div class="card-body">
 						<div class="form-group">
@@ -56,7 +57,7 @@
 						</div>
 						<div class="form-group d-flex">
 							<div class="col-sm-6 d-flex">
-								<input type="text" name="precioproducto" class="form-control"
+								<input type="number" name="precioproducto" class="form-control"
 									placeholder="$  0000.00" value="${productoSeleccionado.getPrecioVenta()}">
 
 							</div>

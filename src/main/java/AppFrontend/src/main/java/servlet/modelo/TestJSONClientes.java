@@ -21,7 +21,8 @@ public class TestJSONClientes {
 
 	private static URL url;
 	private static String sitio = "http://localhost:5000/";
-	
+	//	private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
+
 	public static ArrayList<Clientes> parsingClientes(String json) throws ParseException {// devulve un arraylist
 		JSONParser jsonParser = new JSONParser();
 		ArrayList<Clientes> lista = new ArrayList<Clientes>();
@@ -87,6 +88,35 @@ public class TestJSONClientes {
 		for (Clientes cliente : listaTemporal) {
 			if (cliente.getCedulaCliente() == id) {
 				lista.add(cliente);
+			}
+		}
+		http.disconnect();
+		return lista;
+	}
+
+	public static Clientes getJSONCliente(Long id) throws IOException, ParseException { // devolver un
+		// listado JSON
+
+		url = new URL(sitio + "clientes/listar"); // trae el metodo de Usuarios.API
+		HttpURLConnection http = (HttpURLConnection) url.openConnection();
+
+		http.setRequestMethod("GET");
+		http.setRequestProperty("Accept", "application/json");
+
+		InputStream respuesta = http.getInputStream();
+		byte[] inp = respuesta.readAllBytes();
+		String json = "";
+
+		for (int i = 0; i < inp.length; i++) {
+			json += (char) inp[i];
+		}
+		ArrayList<Clientes> listaTemporal = new ArrayList<Clientes>();
+		Clientes lista = new Clientes();
+		listaTemporal = parsingClientes(json);
+
+		for (Clientes cliente : listaTemporal) {
+			if (cliente.getCedulaCliente() == id) {
+				lista = cliente;
 			}
 		}
 		http.disconnect();
@@ -171,6 +201,5 @@ public class TestJSONClientes {
 		http.disconnect();
 		return respuesta;
 	}
-
 
 }
