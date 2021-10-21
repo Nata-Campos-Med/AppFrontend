@@ -22,8 +22,8 @@ import AppFrontend.src.main.java.servlet.modelo.DTO.Usuarios;
 
 public class TestJSONUsuarios {
 	private static URL url;
-//	private static String sitio = "http://localhost:5000/";
-	private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
+	private static String sitio = "http://localhost:5000/";
+	//	private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
 
 	// ***********************************************************************************************************************************************
 	// modulo de Usuarios

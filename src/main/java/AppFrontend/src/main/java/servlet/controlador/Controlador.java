@@ -100,7 +100,7 @@ public class Controlador extends HttpServlet {
 		}
 	}
 
-	public void buscarProducto(Long cod, HttpServletRequest request, HttpServletResponse response)
+	public void buscarProducto(long cod, HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
 			ArrayList<Productos> listap = TestJSONProductos.getJSONProductos();
