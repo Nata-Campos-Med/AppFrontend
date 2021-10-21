@@ -6,7 +6,7 @@ public class Productos {
 	private String nombreProducto;
 	private long nitProveedor;
 	private double precioCompra;
-	private double ivaCompra;
+	private int ivaCompra;
 	private double precioVenta;
 
 	public long getCodigoProducto() {
@@ -41,11 +41,11 @@ public class Productos {
 		this.precioCompra = precioCompra;
 	}
 
-	public double getIvaCompra() {
+	public int getIvaCompra() {
 		return ivaCompra;
 	}
 
-	public void setIvaCompra(double ivaCompra) {
+	public void setIvaCompra(int ivaCompra) {
 		this.ivaCompra = ivaCompra;
 	}
 

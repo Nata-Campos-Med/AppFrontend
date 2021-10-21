@@ -22,8 +22,8 @@ import AppFrontend.src.main.java.servlet.modelo.DTO.Usuarios;
 
 public class TestJSONUsuarios {
 	private static URL url;
-	private static String sitio = "http://localhost:5000/";
-	//	private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
+//	private static String sitio = "http://localhost:5000/";
+	private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
 
 	// ***********************************************************************************************************************************************
 	// modulo de Usuarios
@@ -98,10 +98,11 @@ public class TestJSONUsuarios {
 				break;
 			}
 		}
-		
+
 		http.disconnect();
 		return lista;
 	}
+
 	public static Usuarios getJSONUsuario(Long id) throws IOException, ParseException { // devolver un
 		// listado JSON
 
@@ -130,6 +131,7 @@ public class TestJSONUsuarios {
 		http.disconnect();
 		return lista;
 	}
+
 	public static int postJSON(Usuarios usuario) throws IOException {
 
 		url = new URL(sitio + "usuarios/guardar");
@@ -534,7 +536,7 @@ public class TestJSONUsuarios {
 			producto.setNombreProducto(innerObj.get("nombreProducto").toString());
 			producto.setNitProveedor(Long.parseLong(innerObj.get("nitProveedor").toString()));
 			producto.setPrecioCompra(Double.parseDouble(innerObj.get("precioCompra").toString()));
-			producto.setIvaCompra(Double.parseDouble(innerObj.get("ivaCompra").toString()));
+			producto.setIvaCompra(Integer.parseInt(innerObj.get("ivaCompra").toString()));
 			producto.setPrecioVenta(Double.parseDouble(innerObj.get("precioVenta").toString()));
 			lista.add(producto);
 		}

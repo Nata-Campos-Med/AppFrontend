@@ -106,7 +106,7 @@
             <h2 id="title-section" class="title-section">Productos</h2>
             <div class="input-group-section" id="input-group-section">
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-1" type="text" title="Cédula" name="txtcodigo" value="${productoSeleccionado.getCodigoProducto()}">
+                    <input class="input-general" id="input-data-1" type="text" title="Codigo" name="txtcodigo" value="${productoSeleccionado.getCodigoProducto()}">
                     <span class="input-span-general" id="span-data-1">Codigo Producto</span>
                 </label>
                 <label class="input-container-admin input-container-general">
@@ -114,19 +114,19 @@
                     <span class="input-span-general" id="span-data-2">Nombre Producto</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-3" type="text" title="E-mail" name="txtnit_proveedor" value="${productoSeleccionado.getNitProveedor()}">
+                    <input class="input-general" id="input-data-3" type="text" title="Nit" name="txtnit_proveedor" value="${productoSeleccionado.getNitProveedor()}">
                     <span class="input-span-general" id="span-data-3">Nit Proveedor</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-4" type="text" title="Nick" name="txtprecio_compra" value="${productoSeleccionado.getPrecioCompra()}">
+                    <input class="input-general" id="input-data-4" type="text" title="Precio Compra" name="txtprecio_compra" value="${productoSeleccionado.getPrecioCompra()}">
                     <span class="input-span-general" id="span-data-4">Precio Compra</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Password" name="txtiva_compra" value="${productoSeleccionado.getIvaCompra()}">
+                    <input class="input-general" id="input-data-5" type="text" title="Iva Compra" name="txtiva_compra" value="${productoSeleccionado.getIvaCompra()}">
                     <span class="input-span-general" id="span-data-5">Iva Compra</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Password" name="txtprecio_venta" value="${productoSeleccionado.getPrecioVenta()}">
+                    <input class="input-general" id="input-data-5" type="text" title="Precio venta" name="txtprecio_venta" value="${productoSeleccionado.getPrecioVenta()}">
                     <span class="input-span-general" id="span-data-5">Precio Venta </span>
                 </label>
             </div>

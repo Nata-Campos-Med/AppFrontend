@@ -21,9 +21,9 @@ import AppFrontend.src.main.java.servlet.modelo.DTO.Ventas;
 public class TestJSONVentas {
 
 	private static URL url;
-	private static String sitio = "http://localhost:5000/";
-	//	private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
-	
+//	private static String sitio = "http://localhost:5000/";
+    private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
+
 	public static ArrayList<Ventas> parsingVentas(String json) throws ParseException {// devulve un arraylist
 		JSONParser jsonParser = new JSONParser();
 		ArrayList<Ventas> lista = new ArrayList<Ventas>();
@@ -32,12 +32,12 @@ public class TestJSONVentas {
 		while (i.hasNext()) {
 			JSONObject innerObj = (JSONObject) i.next();
 			Ventas Venta = new Ventas();
-																
+
 			Venta.setCodigoVenta(Long.parseLong(innerObj.get("codigoVenta").toString()));
-			Venta.setCedulaCliente(Long.parseLong(innerObj.get("cedulaCliente").toString()));			
-			Venta.setValorVenta(Double.parseDouble( innerObj.get("valorVenta").toString()));
-			Venta.setIvaVenta(Double.parseDouble( innerObj.get("ivaVenta").toString()));
-			Venta.setTotalVenta(Double.parseDouble( innerObj.get("totalVenta").toString()));
+			Venta.setCedulaCliente(Long.parseLong(innerObj.get("cedulaCliente").toString()));
+			Venta.setValorVenta(Double.parseDouble(innerObj.get("valorVenta").toString()));
+			Venta.setIvaVenta(Double.parseDouble(innerObj.get("ivaVenta").toString()));
+			Venta.setTotalVenta(Double.parseDouble(innerObj.get("totalVenta").toString()));
 			Venta.setNombreCliente(innerObj.get("nombreCliente").toString());
 			lista.add(Venta);
 		}
@@ -68,7 +68,7 @@ public class TestJSONVentas {
 	}
 
 	public static ArrayList<Ventas> getJSONVentas(Long id) throws IOException, ParseException { // devolver un
-																									// listado JSON
+																								// listado JSON
 
 		url = new URL(sitio + "ventas/listar"); // trae el metodo de Usuarios.API
 		HttpURLConnection http = (HttpURLConnection) url.openConnection();
@@ -95,6 +95,7 @@ public class TestJSONVentas {
 		http.disconnect();
 		return lista;
 	}
+
 	public static Ventas getJSONVenta(Long id) throws IOException, ParseException { // devolver un
 		// listado JSON
 
@@ -140,12 +141,11 @@ public class TestJSONVentas {
 		http.setRequestProperty("Accept", "application/json");
 		http.setRequestProperty("Content-Type", "application/json");
 
-		String data = "{" + "\"codigoVenta\":\"" + String.valueOf(ventas.getCodigoVenta())
-				+ "\",\"cedulaCliente\": \"" + String.valueOf(ventas.getCedulaCliente())				
-				+ "\",\"valorVenta\":\""	+ String.valueOf(ventas.getValorVenta())
-				+ "\",\"ivaVenta\":\""	+ String.valueOf(ventas.getIvaVenta())
-				+ "\",\"totalVenta\":\"" + String.valueOf(ventas.getTotalVenta())
-				+ "\",\"nombreCliente\":\"" + String.valueOf(ventas.getNombreCliente()) + "\"}";
+		String data = "{" + "\"codigoVenta\":\"" + String.valueOf(ventas.getCodigoVenta()) + "\",\"cedulaCliente\": \""
+				+ String.valueOf(ventas.getCedulaCliente()) + "\",\"valorVenta\":\""
+				+ String.valueOf(ventas.getValorVenta()) + "\",\"ivaVenta\":\"" + String.valueOf(ventas.getIvaVenta())
+				+ "\",\"totalVenta\":\"" + String.valueOf(ventas.getTotalVenta()) + "\",\"nombreCliente\":\""
+				+ String.valueOf(ventas.getNombreCliente()) + "\"}";
 
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
@@ -172,13 +172,12 @@ public class TestJSONVentas {
 		http.setRequestProperty("Accept", "application/json");
 		http.setRequestProperty("Content-Type", "application/json");
 
-		String data = "{" + "\"codigoVenta\":\"" + id 
-				+ "\",\"cedulaCliente\": \"" + String.valueOf(ventas.getCedulaCliente())				
-				+ "\",\"valorVenta\":\""	+ String.valueOf(ventas.getValorVenta())
-				+ "\",\"ivaVenta\":\""	+ String.valueOf(ventas.getIvaVenta())
-				+ "\",\"totalVenta\":\"" + String.valueOf(ventas.getTotalVenta()) 
-				+ "\",\"nombreCliente\":\"" + String.valueOf(ventas.getNombreCliente())+ "\"}";
-		
+		String data = "{" + "\"codigoVenta\":\"" + id + "\",\"cedulaCliente\": \""
+				+ String.valueOf(ventas.getCedulaCliente()) + "\",\"valorVenta\":\""
+				+ String.valueOf(ventas.getValorVenta()) + "\",\"ivaVenta\":\"" + String.valueOf(ventas.getIvaVenta())
+				+ "\",\"totalVenta\":\"" + String.valueOf(ventas.getTotalVenta()) + "\",\"nombreCliente\":\""
+				+ String.valueOf(ventas.getNombreCliente()) + "\"}";
+
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);
 		OutputStream stream = http.getOutputStream();
 		stream.write(out);
@@ -208,6 +207,5 @@ public class TestJSONVentas {
 		http.disconnect();
 		return respuesta;
 	}
-
 
 }

@@ -1049,11 +1049,11 @@ public class Controlador extends HttpServlet {
 					e1.printStackTrace();
 				}			
 				Productos producto = new Productos();
-				
+				producto.setCodigoProducto(productoMayor+1);
 				producto.setNombreProducto(request.getParameter("txtnombre"));
 				producto.setNitProveedor(Long.parseLong(request.getParameter("txtnit_proveedor")));
 				producto.setPrecioCompra(Double.parseDouble(request.getParameter("txtprecio_compra")));
-				producto.setIvaCompra(Double.parseDouble(request.getParameter("txtiva_compra")));
+				producto.setIvaCompra(Integer.parseInt(request.getParameter("txtiva_compra")));
 				producto.setPrecioVenta(Double.parseDouble(request.getParameter("txtprecio_venta")));
 
 				int respuesta = 0;
@@ -1076,7 +1076,7 @@ public class Controlador extends HttpServlet {
 				producto.setNombreProducto(request.getParameter("txtnombre"));
 				producto.setNitProveedor(Long.parseLong(request.getParameter("txtnit_proveedor")));
 				producto.setPrecioCompra(Double.parseDouble(request.getParameter("txtprecio_compra")));
-				producto.setIvaCompra(Double.parseDouble(request.getParameter("txtiva_compra")));
+				producto.setIvaCompra(Integer.parseInt(request.getParameter("txtiva_compra")));
 				producto.setPrecioVenta(Double.parseDouble(request.getParameter("txtprecio_venta")));
 
 				int respuesta = 0;

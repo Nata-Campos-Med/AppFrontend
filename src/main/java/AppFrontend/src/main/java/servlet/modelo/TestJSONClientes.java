@@ -20,8 +20,8 @@ import AppFrontend.src.main.java.servlet.modelo.DTO.Clientes;
 public class TestJSONClientes {
 
 	private static URL url;
-	private static String sitio = "http://localhost:5000/";
-	//	private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
+//		private static String sitio = "http://localhost:5000/";
+		private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
 
 	public static ArrayList<Clientes> parsingClientes(String json) throws ParseException {// devulve un arraylist
 		JSONParser jsonParser = new JSONParser();
@@ -140,8 +140,9 @@ public class TestJSONClientes {
 		http.setRequestProperty("Content-Type", "application/json");
 
 		String data = "{" + "\"cedulaCliente\":\"" + String.valueOf(cliente.getCedulaCliente())
-				+ "\",\"direccionCliente\": \"" + cliente.getDireccionCliente() + "\",\"emailCliente\": \""
-				+ cliente.getEmailCliente() + "\",\"nombreCliente\":\"" + cliente.getNombreCliente()
+				+ "\",\"direccionCliente\": \"" + cliente.getDireccionCliente() 
+				+ "\",\"emailCliente\": \""	+ cliente.getEmailCliente() 
+				+ "\",\"nombreCliente\":\"" + cliente.getNombreCliente()
 				+ "\",\"telefonoCliente\":\"" + cliente.getTelefonoCliente() + "\"}";
 
 		byte[] out = data.getBytes(StandardCharsets.UTF_8);

@@ -65,7 +65,7 @@ public class loginServlet extends HttpServlet {
 				out.println("<body>");
 				out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
 				out.println("<script>"
-						+ "	swal(\"Usuario no encontrado\", \"Verifique sus datos o contáctese con el administrador.\", \"error\", {closeOnClickOutside: false});"
+						+ "	swal(\"Usuario no encontrado\", \"Verifique sus datos o contÃ¡ctese con el administrador.\", \"error\", {closeOnClickOutside: false});"
 						+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
 						+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./login.jsp\"})"
 						+ "</script>");

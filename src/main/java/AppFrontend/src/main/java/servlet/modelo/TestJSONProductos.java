@@ -21,8 +21,8 @@ import AppFrontend.src.main.java.servlet.modelo.DTO.Ventas;
 public class TestJSONProductos {
 
 	private static URL url;
-	private static String sitio = "http://localhost:5000/";
-	//private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
+	//	private static String sitio = "http://localhost:5000/";
+		private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
 	
 	public static ArrayList<Productos> parsingProductos(String json) throws ParseException {// devulve un arraylist
 		JSONParser jsonParser = new JSONParser();
@@ -37,7 +37,7 @@ public class TestJSONProductos {
 			producto.setNombreProducto(innerObj.get("nombreProducto").toString());
 			producto.setNitProveedor(Long.parseLong(innerObj.get("nitProveedor").toString()));
 			producto.setPrecioCompra(Double.parseDouble(innerObj.get("precioCompra").toString()));
-			producto.setIvaCompra(Double.parseDouble(innerObj.get("ivaCompra").toString()));
+			producto.setIvaCompra(Integer.parseInt(innerObj.get("ivaCompra").toString()));
 			producto.setPrecioVenta(Double.parseDouble(innerObj.get("precioVenta").toString()));
 			lista.add(producto);
 		}
