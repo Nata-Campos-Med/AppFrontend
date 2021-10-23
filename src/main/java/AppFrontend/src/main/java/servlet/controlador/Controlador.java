@@ -214,7 +214,22 @@ public class Controlador extends HttpServlet {
 							out.println("</body></html>");
 
 						} else {
-							out.println("Error: " + respuesta);
+							out.println("<html><head><title>Error</title><style>"
+									+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+									+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+									+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+									+ "	.swal-title{color: #FFF; font-weight: 500;}"
+									+ " .swal-text{color: #FFF; font-weight: 300;}"
+									+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+									+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+							out.println("<body>");
+							out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+							out.println("<script>"
+									+ "	swal(\"Error: " + respuesta +  "\", \"\", \"error\", {closeOnClickOutside: false});"
+									+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+									+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+									+ "</script>");
+							out.println("</body></html>");
 						}
 						out.close();
 					} catch (Exception e) {
@@ -273,7 +288,22 @@ public class Controlador extends HttpServlet {
 										+ "</script>");
 								out.println("</body></html>");
 							} else {
-								out.println("Error: " + respuesta);
+								out.println("<html><head><title>Error</title><style>"
+										+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+										+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+										+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+										+ "	.swal-title{color: #FFF; font-weight: 500;}"
+										+ " .swal-text{color: #FFF; font-weight: 300;}"
+										+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+										+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+								out.println("<body>");
+								out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+								out.println("<script>"
+										+ "	swal(\"Error: " + respuesta +  "\", \"\", \"error\", {closeOnClickOutside: false});"
+										+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+										+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+										+ "</script>");
+								out.println("</body></html>");
 							}
 							out.close();
 						} catch (Exception e) {
@@ -509,7 +539,22 @@ public class Controlador extends HttpServlet {
 									+ "</script>");
 							out.println("</body></html>");
 						} else {
-							out.println("Error: " + respuesta);
+							out.println("<html><head><title>Error</title><style>"
+									+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+									+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+									+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+									+ "	.swal-title{color: #FFF; font-weight: 500;}"
+									+ " .swal-text{color: #FFF; font-weight: 300;}"
+									+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+									+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+							out.println("<body>");
+							out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+							out.println("<script>"
+									+ "	swal(\"Error: " + respuesta +  "\", \"\", \"error\", {closeOnClickOutside: false});"
+									+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+									+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+									+ "</script>");
+							out.println("</body></html>");
 						}
 						out.close();
 					} catch (Exception e) {
@@ -568,7 +613,22 @@ public class Controlador extends HttpServlet {
 										+ "</script>");
 								out.println("</body></html>");
 							} else {
-								out.println("Error: " + respuesta);
+								out.println("<html><head><title>Error</title><style>"
+										+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+										+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+										+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+										+ "	.swal-title{color: #FFF; font-weight: 500;}"
+										+ " .swal-text{color: #FFF; font-weight: 300;}"
+										+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+										+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+								out.println("<body>");
+								out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+								out.println("<script>"
+										+ "	swal(\"Error: " + respuesta +  "\", \"\", \"error\", {closeOnClickOutside: false});"
+										+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+										+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+										+ "</script>");
+								out.println("</body></html>");
 							}
 							out.close();
 						} catch (Exception e) {
@@ -805,7 +865,22 @@ public class Controlador extends HttpServlet {
 									+ "</script>");
 							out.println("</body></html>");
 						} else {
-							out.println("Error: " + respuesta);
+							out.println("<html><head><title>Error</title><style>"
+									+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+									+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+									+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+									+ "	.swal-title{color: #FFF; font-weight: 500;}"
+									+ " .swal-text{color: #FFF; font-weight: 300;}"
+									+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+									+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+							out.println("<body>");
+							out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+							out.println("<script>"
+									+ "	swal(\"Error: " + respuesta +  "\", \"\", \"error\", {closeOnClickOutside: false});"
+									+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+									+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+									+ "</script>");
+							out.println("</body></html>");
 						}
 						out.close();
 					} catch (Exception e) {
@@ -865,7 +940,22 @@ public class Controlador extends HttpServlet {
 										+ "</script>");
 								out.println("</body></html>");
 							} else {
-								out.println("Error: " + respuesta);
+								out.println("<html><head><title>Error</title><style>"
+										+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+										+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+										+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+										+ "	.swal-title{color: #FFF; font-weight: 500;}"
+										+ " .swal-text{color: #FFF; font-weight: 300;}"
+										+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+										+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+								out.println("<body>");
+								out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+								out.println("<script>"
+										+ "	swal(\"Error: " + respuesta +  "\", \"\", \"error\", {closeOnClickOutside: false});"
+										+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+										+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+										+ "</script>");
+								out.println("</body></html>");
 							}
 							out.close();
 						} catch (Exception e) {
@@ -1093,14 +1183,42 @@ public class Controlador extends HttpServlet {
 				int respuesta = 0;
 				try {
 					respuesta = TestJSONProductos.postJSON(producto);
-					PrintWriter write = response.getWriter();
 					if (respuesta == 200) {
-						request.getRequestDispatcher("Controlador?menu=Productos&accion=Listar").forward(request,
-								response);
+						out.println("<html><head><title>Success</title><style>"
+								+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+								+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+								+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+								+ "	.swal-title{color: #FFF; font-weight: 500;}"
+								+ " .swal-text{color: #FFF; font-weight: 300;}"
+								+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+								+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+						out.println("<body>");
+						out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+						out.println("<script>"
+								+ "	swal(\"Producto agregado exitosamente.\", \"\", \"success\", {closeOnClickOutside: false});"
+								+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+								+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+								+ "</script>");
+						out.println("</body></html>");
 					} else {
-						write.println("Error: " + respuesta);
+						out.println("<html><head><title>Error</title><style>"
+								+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+								+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+								+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+								+ "	.swal-title{color: #FFF; font-weight: 500;}"
+								+ " .swal-text{color: #FFF; font-weight: 300;}"
+								+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+								+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+						out.println("<body>");
+						out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+						out.println("<script>"
+								+ "	swal(\"Error: " + respuesta +  "\", \"\", \"error\", {closeOnClickOutside: false});"
+								+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+								+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+								+ "</script>");
+						out.println("</body></html>");
 					}
-					write.close();
+					out.close();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -1116,15 +1234,43 @@ public class Controlador extends HttpServlet {
 				int respuesta = 0;
 				try {
 					respuesta = TestJSONProductos.putJSON(producto, producto.getNitProveedor());
-					PrintWriter write = response.getWriter();
 
 					if (respuesta == 200) {
-						request.getRequestDispatcher("Controlador?menu=Productos&accion=Listar").forward(request,
-								response);
+						out.println("<html><head><title>Success</title><style>"
+								+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+								+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+								+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+								+ "	.swal-title{color: #FFF; font-weight: 500;}"
+								+ " .swal-text{color: #FFF; font-weight: 300;}"
+								+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+								+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+						out.println("<body>");
+						out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+						out.println("<script>"
+								+ "	swal(\"Producto actualizado exitosamente.\", \"\", \"success\", {closeOnClickOutside: false});"
+								+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+								+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+								+ "</script>");
+						out.println("</body></html>");
 					} else {
-						write.println("Error: " + respuesta);
+						out.println("<html><head><title>Error</title><style>"
+								+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+								+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+								+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+								+ "	.swal-title{color: #FFF; font-weight: 500;}"
+								+ " .swal-text{color: #FFF; font-weight: 300;}"
+								+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+								+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+						out.println("<body>");
+						out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+						out.println("<script>"
+								+ "	swal(\"Error: " + respuesta +  "\", \"\", \"error\", {closeOnClickOutside: false});"
+								+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+								+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+								+ "</script>");
+						out.println("</body></html>");
 					}
-					write.close();
+					out.close();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -1148,14 +1294,42 @@ public class Controlador extends HttpServlet {
 				int respuesta = 0;
 				try {
 					respuesta = TestJSONProductos.deleteJSONProductos(id);
-					PrintWriter write = response.getWriter();
 					if (respuesta == 200) {
-						request.getRequestDispatcher("Controlador?menu=Productos&accion=Listar").forward(request,
-								response);
+						out.println("<html><head><title>Warning</title><style>"
+								+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+								+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+								+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+								+ "	.swal-title{color: #FFF; font-weight: 500;}"
+								+ " .swal-text{color: #FFF; font-weight: 300;}"
+								+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+								+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+						out.println("<body>");
+						out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+						out.println("<script>"
+								+ "	swal(\"Producto eliminado exitosamente.\", \"\", \"warning\", {closeOnClickOutside: false});"
+								+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+								+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+								+ "</script>");
+						out.println("</body></html>");
 					} else {
-						write.println("Error: " + respuesta);
+						out.println("<html><head><title>Error</title><style>"
+								+ " .swal-icon--success:after, .swal-icon--success:before, .swal-icon--success__hide-corners {background: transparent}"
+								+ " .swal-overlay{background-color: rgb(172, 77, 251, 0.45);}"
+								+ " .swal-modal{background-color: rgba(0, 0, 0, 0.3); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); font-family: 'Segoe UI', Tahoma, sans-serif}"
+								+ "	.swal-title{color: #FFF; font-weight: 500;}"
+								+ " .swal-text{color: #FFF; font-weight: 300;}"
+								+ "	.swal-button{opacity: .8; transition: opacity 0.5s;}"
+								+ "	.swal-button:hover{opacity: 1}" + "</style></head>");
+						out.println("<body>");
+						out.println("<script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>");
+						out.println("<script>"
+								+ "	swal(\"Error: " + respuesta +  "\", \"\", \"error\", {closeOnClickOutside: false});"
+								+ " const btnSwal = document.getElementsByClassName(\"swal-button\");"
+								+ "	btnSwal[0].addEventListener(\"click\", () => {window.location=\"./Productos.jsp\"})"
+								+ "</script>");
+						out.println("</body></html>");
 					}
-					write.close();
+					out.close();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

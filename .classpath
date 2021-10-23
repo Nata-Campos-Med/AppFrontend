@@ -13,17 +13,17 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="D:/programacion leo/git/Json/json-simple-1.1.1.jar">
+	<classpathentry kind="lib" path="C:/Users/familiaCastaneda/eclipse-workspace/json-simple-1.1.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/programacion leo/git/Json/jstl-1.2.jar">
+	<classpathentry kind="lib" path="C:/Users/familiaCastaneda/eclipse-workspace/jstl-1.2.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="D:/programacion leo/git/Json/opencsv-5.5.2.jar">
+	<classpathentry kind="lib" path="C:/Users/familiaCastaneda/eclipse-workspace/opencsv-5.5.2.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>

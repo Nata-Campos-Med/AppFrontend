@@ -61,7 +61,7 @@
                 <span class="btn-span">Ventas</span>
                 <img src="./images/sale.svg" alt="sales">
             </a>
-            <a class="btn-admin" id="btn-reports" href="./reports.jsp">
+            <a class="btn-admin" id="btn-reports" href="./Reportes.jsp">
                 <span class="btn-span">Reportes</span>
                 <img src="./images/report.svg" alt="reports">
             </a>

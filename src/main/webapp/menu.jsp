@@ -67,7 +67,7 @@
             <div class="menu__container-profile container-icon">
                 <i class="fas fa-user-circle"></i>
                 <div class="profile">
-                    <h3><input type="hidden" name="UsuarioActivo" value="${usuarioSeleccionado.getCedulaUsuario()}" ></h3>
+                    <h3 name="UsuarioActivo" value="${usuarioSeleccionado.getCedulaUsuario()}"></h3>
                     <div class="sign-out">
                         <a href="./login.jsp">Cerrar sesión</a>
                         <i class="fas fa-sign-out-alt"></i>

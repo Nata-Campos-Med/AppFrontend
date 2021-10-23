@@ -41,7 +41,7 @@
             </a>
         </div>
         <div class="navbar-btn">
-            <a class="btn-admin white" id="btn-users" href="Controlador?menu=Usuarios&accion=Listar">
+            <a class="btn-admin" id="btn-users" href="Controlador?menu=Usuarios&accion=Listar">
                 <span class="btn-span">Usuarios</span>
                 <img src="./images/user.svg" alt="user">
             </a>
@@ -53,7 +53,7 @@
                 <span class="btn-span">Proveedores</span>
                 <img src="./images/supplier.svg" alt="supplier">
             </a>
-            <a class="btn-admin" id="btn-products" href="Controlador?menu=Productos&accion=Listar">
+            <a class="btn-admin white" id="btn-products" href="Controlador?menu=Productos&accion=Listar">
                 <span class="btn-span">Productos</span>
                 <img src="./images/product.svg" alt="product">
             </a>
@@ -93,40 +93,36 @@
     </nav>
 
     <main>
-        <!-- <section id="message-section" class="message-section">
-            <div class="message success-message">
-                <p>
-                    Selecciona una de las opciones del menu para empezar
-                </p>
-                <i class="fas fa-times close-message"></i>
-            </div>
-        </section> -->
         <form id="form-people" class="form-people" action="Controlador" method="get">
+        <h2 id="title-section" class="title-section">Productos</h2>
+        <div class="file-section" id="file-section">
+            <input type="file" id="input-file" class="input-file" accept=".csv"/>
+            <button class="btn-file" type="submit">Enviar</button>
+        </div>
         <input type="hidden" name="menu" value="Productos">
-            <h2 id="title-section" class="title-section">Productos</h2>
             <div class="input-group-section" id="input-group-section">
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-1" type="text" title="Codigo" name="txtcodigo" value="${productoSeleccionado.getCodigoProducto()}">
+                    <input class="input-general" id="input-data-1" type="number" title="Codigo" name="txtcodigo" value="${productoSeleccionado.getCodigoProducto()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-1">Codigo Producto</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-2" type="text" title="Nombre" name="txtnombre" value="${productoSeleccionado.getNombreProducto()}">
+                    <input class="input-general" id="input-data-2" type="text" title="Nombre" name="txtnombre" value="${productoSeleccionado.getNombreProducto()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-2">Nombre Producto</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-3" type="text" title="Nit" name="txtnit_proveedor" value="${productoSeleccionado.getNitProveedor()}">
+                    <input class="input-general" id="input-data-3" type="number" title="Nit" name="txtnit_proveedor" value="${productoSeleccionado.getNitProveedor()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-3">Nit Proveedor</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-4" type="text" title="Precio Compra" name="txtprecio_compra" value="${productoSeleccionado.getPrecioCompra()}">
+                    <input class="input-general" id="input-data-4" type="number" title="Precio Compra" name="txtprecio_compra" value="${productoSeleccionado.getPrecioCompra()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-4">Precio Compra</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Iva Compra" name="txtiva_compra" value="${productoSeleccionado.getIvaCompra()}">
+                    <input class="input-general" id="input-data-5" type="number" title="Iva Compra" name="txtiva_compra" value="${productoSeleccionado.getIvaCompra()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-5">Iva Compra</span>
                 </label>
                 <label class="input-container-admin input-container-general">
-                    <input class="input-general" id="input-data-5" type="text" title="Precio venta" name="txtprecio_venta" value="${productoSeleccionado.getPrecioVenta()}">
+                    <input class="input-general" id="input-data-5" type="number" title="Precio venta" name="txtprecio_venta" value="${productoSeleccionado.getPrecioVenta()}" autocomplete="off">
                     <span class="input-span-general" id="span-data-5">Precio Venta </span>
                 </label>
             </div>
