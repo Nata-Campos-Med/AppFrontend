@@ -156,9 +156,9 @@
                             <tbody>
                                 <tr>
                                     <td>${lista.getCedulaCliente()}</td>
-                                    <td>${lista.getDireccionCliente()}</td>
+                                    <td>${lista.getNombreCliente()}</td>                                    
                                     <td>${lista.getEmailCliente()}</td>
-                                    <td>${lista.getNombreCliente()}</td>
+                                    <td>${lista.getDireccionCliente()}</td>
                                     <td>${lista.getTelefonoCliente()}</td>
                                 </tr>
                             </c:forEach>

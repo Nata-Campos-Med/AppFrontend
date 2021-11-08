@@ -21,7 +21,7 @@ public class TestJSONProveedores {
 
 	private static URL url;
 	private static String sitio = "http://localhost:5000/";
-	//    private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
+//	private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
 
 	public static ArrayList<Proveedores> parsingProveedores(String json) throws ParseException {// devulve un arraylist
 		JSONParser jsonParser = new JSONParser();

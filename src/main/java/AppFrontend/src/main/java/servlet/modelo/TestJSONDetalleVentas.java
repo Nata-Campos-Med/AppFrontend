@@ -21,7 +21,7 @@ import AppFrontend.src.main.java.servlet.modelo.DTO.DetalleVentas;
 public class TestJSONDetalleVentas {
 	private static URL url;
 	private static String sitio = "http://localhost:5000/";
-//			private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
+//	private static String sitio = "http://localhost:8080/Back_PapeleriaWWW-0.0.1-SNAPSHOT/";
 	
 	public static ArrayList<DetalleVentas> parsingDetalleVentas(String json) throws ParseException {// devulve un arraylist
 		JSONParser jsonParser = new JSONParser();
